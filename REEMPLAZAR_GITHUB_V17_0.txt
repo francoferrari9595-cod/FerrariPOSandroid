@@ -1,0 +1,11 @@
+FERRARIPOS MANAGER V17.0
+
+1. Reemplazar TODO el contenido del repositorio por el contenido de este ZIP.
+2. Mantener la rama main.
+3. No eliminar .github ni los archivos BAT existentes.
+4. GitHub Actions debe compilar Android y Windows por separado, como en V16.9.
+
+IMPORTANTE:
+- La conexión QR/red/Cloudflare NO fue modificada.
+- El cambio principal está en Compras del Manager Android.
+- Se agregó solamente el soporte API necesario en WebDashboardServer.cs para recibir compras desde Android; no se cambió la lógica de conexión ni la interfaz Windows.

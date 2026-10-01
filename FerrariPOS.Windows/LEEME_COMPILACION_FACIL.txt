@@ -1,0 +1,15 @@
+FERRARIPOS V73.1.46 - COMPILACION FACIL
+
+1) Abrir la carpeta Proyecto.
+2) Ejecutar COMPILAR_FACIL.bat como administrador si Windows lo solicita.
+3) El programa restaura dependencias y genera EXE\FerrarisPOS.exe para Windows x64.
+4) Para crear el instalador FerrariPOS_Setup_V73.1.46.exe ejecutar AUTO_SETUP.bat.
+
+REQUISITO:
+- Windows 10/11 x64.
+- .NET 8 SDK. COMPILAR_FACIL.bat intenta instalarlo mediante winget si no esta instalado.
+
+IMPORTANTE:
+- No modificar Setup_Network_Cloudflare.ps1.
+- No modificar la configuracion de Cloudflare, QuickTunnel, DNS ni el servidor web.
+- AUTO_SETUP.bat conserva la configuracion automatica existente y usa el mismo Setup_Network_Cloudflare.ps1.

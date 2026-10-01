@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#005236", "on-primary-fixed-variant": "#93000b", "background": "#0b1326", "on-tertiary-fixed": "#001e2f", "primary-container": "#dc2626", "inverse-primary": "#bf0715", "on-primary-container": "#fff6f5", "surface-container": "#171f33", "on-primary-fixed": "#410002", "primary-fixed": "#ffdad6", "primary": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "on-tertiary": "#00344e", "surface-container-high": "#222a3d", "on-primary": "#690005", "secondary-fixed": "#6ffbbe", "secondary-container": "#00a572", "on-secondary-container": "#00311f", "on-secondary-fixed": "#002113", "surface-tint": "#ffb4ab", "tertiary-container": "#0079af", "surface-dim": "#0b1326", "on-surface": "#dae2fd", "on-error": "#690005", "inverse-on-surface": "#283044", "on-surface-variant": "#e6bdb8", "surface-container-highest": "#2d3449", "primary-fixed-dim": "#ffb4ab", "on-secondary": "#003824", "on-tertiary-container": "#f4f9ff", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#004b6f", "tertiary": "#8bceff", "outline-variant": "#5c403c", "outline": "#ac8884", "surface": "#0b1326", "error": "#ffb4ab", "surface-variant": "#2d3449", "tertiary-fixed": "#c9e6ff", "tertiary-fixed-dim": "#8bceff", "surface-container-lowest": "#060e20", "inverse-surface": "#dae2fd", "on-background": "#dae2fd", "surface-container-low": "#131b2e", "error-container": "#93000a", "secondary": "#4edea3", "surface-bright": "#31394d" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "label-action": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-kpi-mobile": ["Inter"], "label-kpi-badge": ["JetBrains Mono"], "display-kpi": ["Inter"], "headline-md": ["Inter"], "label-numeric": ["JetBrains Mono"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-action": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-kpi-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-kpi-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-kpi": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-numeric": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col pt-safe pb-safe select-none"><main class="flex flex-col relative w-full bg-surface flex-1"><div class="flex flex-col w-full pb-8">
+<!-- Telemetry Bar & Connection Signal -->
+<div class="px-gutter pt-3 pb-2 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-pulse shadow-sm"></span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-secondary tracking-wider uppercase">WiFi LAN Activa</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-label-kpi-badge text-label-kpi-badge">AES-256 TLS</span>
+</div>
+</div>
+<!-- Header Section -->
+<div class="px-gutter py-space-sm">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-primary uppercase font-bold tracking-wider">FerrariPOS Link v4.2</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Vincular con FerrariPOS PC</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Conectá este dispositivo al servidor de caja o depósito en dos pasos simples.</p>
+</div>
+<!-- Stepper Card -->
+<div class="px-gutter my-space-sm">
+<div class="bg-surface-container rounded-xl p-space-md shadow-md">
+<div class="flex items-start gap-space-sm mb-space-xs">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-label-kpi-badge text-label-kpi-badge shrink-0">1</span>
+<p class="font-body-sm text-body-sm text-on-surface">En tu PC FerrariPOS andá a <span class="font-semibold text-primary">Menú &gt; Vincular Teléfono</span>.</p>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-label-kpi-badge text-label-kpi-badge shrink-0">2</span>
+<p class="font-body-sm text-body-sm text-on-surface">Apuntá con la cámara al código QR de la pantalla.</p>
+</div>
+</div>
+</div>
+<!-- Interactive Camera Viewport Simulator -->
+<div class="px-gutter my-space-sm">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container-lowest shadow-xl flex items-center justify-center">
+<!-- Simulated Camera Feed Background -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-35 filter blur-[1px]" data-alt="Dark modern POS terminal desktop monitor screen in a warehouse office showing an active FerrariPOS software interface with a crisp high contrast glowing QR code in low light, neon accents and slate textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyKwXH1giA-_e8TNTKvDmENLx0sf-pyys9j3SAoyWilDl_dq-muFtZNJBNN1eF0cyOgQz-u2KtMA_xzXiQ1qRj3Va3g3sSQnTsDwEuFioVmoRAjepb5XX0oH3AMqHiiwMTT_dPCI8KuXTFKoq0mP183cjMWEVfwvunLAbVJAh-OzuDZGCcSwBzxDpNIgaE0jyZoPSxELcN4TigWOS3Gvn-I-LBQZNjfBeD-C2kxWoyhCYinHN_cEUk"/>
+<!-- Scan Sweep Line Overlay -->
+<div class="absolute inset-x-8 top-10 h-0.5 bg-gradient-to-r from-transparent via-primary-container to-transparent shadow-lg animate-[pulse_2s_infinite]"></div>
+<!-- Framing Reticle Corners (Ferrari Red) -->
+<div class="relative w-48 h-48 pointer-events-none flex items-center justify-center">
+<!-- Top Left Corner -->
+<span class="absolute top-0 left-0 w-7 h-7 border-t-4 border-l-4 border-primary-container rounded-tl-lg shadow-[0_0_12px_rgba(220,38,38,0.7)]"></span>
+<!-- Top Right Corner -->
+<span class="absolute top-0 right-0 w-7 h-7 border-t-4 border-r-4 border-primary-container rounded-tr-lg shadow-[0_0_12px_rgba(220,38,38,0.7)]"></span>
+<!-- Bottom Left Corner -->
+<span class="absolute bottom-0 left-0 w-7 h-7 border-b-4 border-l-4 border-primary-container rounded-bl-lg shadow-[0_0_12px_rgba(220,38,38,0.7)]"></span>
+<!-- Bottom Right Corner -->
+<span class="absolute bottom-0 right-0 w-7 h-7 border-b-4 border-r-4 border-primary-container rounded-br-lg shadow-[0_0_12px_rgba(220,38,38,0.7)]"></span>
+<!-- QR Captured Stamp Simulation -->
+<div class="flex flex-col items-center gap-1 bg-surface-container-high/90 px-3 py-2 rounded-lg backdrop-blur-md shadow-md transform transition-all duration-300" id="qrDetectedBadge">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-secondary font-bold tracking-wide">QR DETECTADO</span>
+</div>
+</div>
+<!-- Camera Floating Controls -->
+<div class="absolute bottom-3 inset-x-3 flex items-center justify-between px-2 pointer-events-auto">
+<button aria-label="Encender Linterna" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-high/80 backdrop-blur text-on-surface text-body-sm font-label-action active:scale-95 transition-transform" id="flashToggle" type="button">
+<span class="material-symbols-outlined text-base">flashlight_on</span>
+<span id="flashText">Flash</span>
+</button>
+<button aria-label="Cambiar Cámara" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-high/80 backdrop-blur text-on-surface text-body-sm font-label-action active:scale-95 transition-transform" id="cameraFlip" type="button">
+<span class="material-symbols-outlined text-base">flip_camera_android</span>
+<span>Trasera</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Detected Server Card -->
+<div class="px-gutter my-space-sm">
+<div class="bg-surface-container-high rounded-xl p-space-md shadow-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Supermercado &amp; Distribuidora Ferrari</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-kpi-badge text-label-kpi-badge shrink-0">EN LÍNEA</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Servidor Local POS</span>
+<span class="font-label-numeric text-label-numeric text-tertiary">192.168.0.102:5080</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Diagnóstico</span>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="font-label-kpi-badge text-label-kpi-badge">Ping 4ms</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-container bg-secondary-container/20 rounded p-1.5 mt-1">Conexión local WiFi verificada sin restricciones de firewall.</p>
+</div>
+</div>
+<!-- Immediate Authentication Form -->
+<form class="px-gutter flex flex-col gap-space-md mt-space-xs" id="authForm" onsubmit="event.preventDefault();">
+<!-- User Selection / Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-action text-label-action text-on-surface" for="usernameInput">Usuario del Sistema</label>
+<div class="relative flex items-center bg-surface-container rounded-lg overflow-hidden">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-xl">account_circle</span>
+<input class="w-full bg-transparent pl-11 pr-4 py-3 text-on-surface font-body-md text-body-md focus:outline-none" id="usernameInput" placeholder="Ingresá tu usuario" type="text" value="admin"/>
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded mr-3 uppercase">Caja 01</span>
+</div>
+</div>
+<!-- Password / PIN Input -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-action text-label-action text-on-surface" for="pinInput">PIN o Clave de Terminal</label>
+<span class="font-body-sm text-body-sm text-primary">¿Olvidaste el PIN?</span>
+</div>
+<div class="relative flex items-center bg-surface-container rounded-lg overflow-hidden">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-xl">password</span>
+<input class="w-full bg-transparent pl-11 pr-11 py-3 text-on-surface font-label-numeric text-label-numeric tracking-widest focus:outline-none" id="pinInput" placeholder="••••" type="password" value="8492"/>
+<button aria-label="Mostrar PIN" class="absolute right-3 text-on-surface-variant focus:outline-none flex items-center justify-center p-1" id="togglePinVisibility" type="button">
+<span class="material-symbols-outlined text-xl" id="pinEyeIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Security Remember Switch -->
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-xl">shield</span>
+<div class="flex flex-col">
+<span class="font-label-action text-label-action text-on-surface">Recordar credenciales</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Token encriptado en el dispositivo</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="rememberSwitch" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-container after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Friendly Error / Network Advisory Notice (Argentine Spanish) -->
+<div class="bg-surface-container rounded-lg p-3 flex items-start gap-space-sm" id="wifiTipBox">
+<span class="material-symbols-outlined text-tertiary text-xl shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-action text-label-action text-on-surface">¿Tenés problemas para vincular?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Fijate que el celu y la compu estén conectados al mismo WiFi del local. Si no engancha de una, probá tocar 'Reintentar' o cargá la IP a mano.</p>
+</div>
+</div>
+<!-- Primary Action Button (Reachable lower ergonomic zone) -->
+<button class="w-full min-h-[56px] py-3.5 px-4 bg-primary-container active:bg-inverse-primary text-on-primary-container rounded-lg font-headline-sm text-headline-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform" id="submitConnectBtn" type="button">
+<span>INGRESAR A FERRARIPOS</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<!-- Alternative Discrete Manual Option -->
+<div class="flex flex-col items-center justify-center pt-2">
+<button class="flex items-center gap-1.5 py-2 px-3 text-tertiary active:opacity-75 font-label-action text-label-action" id="manualConfigToggle" type="button">
+<span class="material-symbols-outlined text-base">settings_ethernet</span>
+<span>Configurar IP y puerto manualmente</span>
+</button>
+<!-- Collapsible Manual Fields -->
+<div class="hidden w-full flex-col gap-2.5 mt-3 p-3 bg-surface-container rounded-lg transition-all" id="manualFields">
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase">Parámetros de Red Manual</span>
+<div class="grid grid-cols-3 gap-2">
+<div class="col-span-2">
+<input class="w-full bg-surface-container-high px-3 py-2 rounded text-on-surface font-label-numeric text-label-numeric focus:outline-none" placeholder="192.168.0.102" type="text" value="192.168.0.102"/>
+</div>
+<div class="col-span-1">
+<input class="w-full bg-surface-container-high px-3 py-2 rounded text-on-surface font-label-numeric text-label-numeric focus:outline-none" placeholder="5080" type="text" value="5080"/>
+</div>
+</div>
+<button class="mt-1 w-full py-2 bg-surface-container-high text-on-surface text-body-sm font-label-action rounded active:scale-98" id="saveManualBtn" type="button">
+          Guardar y Probar Conexión
+        </button>
+</div>
+</div>
+</form>
+</div>
+<script>
+  // Flash toggle visual feedback
+  const flashBtn = document.getElementById('flashToggle');
+  const flashTxt = document.getElementById('flashText');
+  let flashActive = false;
+  if (flashBtn) {
+    flashBtn.addEventListener('click', () => {
+      flashActive = !flashActive;
+      flashTxt.textContent = flashActive ? 'Encendido' : 'Flash';
+      flashBtn.classList.toggle('bg-primary-container', flashActive);
+      flashBtn.classList.toggle('text-on-primary-container', flashActive);
+    });
+  }
+
+  // Camera switch simulation
+  const camBtn = document.getElementById('cameraFlip');
+  let camState = 0;
+  const camLabels = ['Trasera', 'Frontal'];
+  if (camBtn) {
+    camBtn.addEventListener('click', () => {
+      camState = (camState + 1) % camLabels.length;
+      camBtn.querySelector('span:last-child').textContent = camLabels[camState];
+    });
+  }
+
+  // Password / PIN Visibility Toggle
+  const togglePinBtn = document.getElementById('togglePinVisibility');
+  const pinInput = document.getElementById('pinInput');
+  const pinIcon = document.getElementById('pinEyeIcon');
+  if (togglePinBtn && pinInput && pinIcon) {
+    togglePinBtn.addEventListener('click', () => {
+      const isPass = pinInput.type === 'password';
+      pinInput.type = isPass ? 'text' : 'password';
+      pinIcon.textContent = isPass ? 'visibility_off' : 'visibility';
+    });
+  }
+
+  // Manual Config Accordion
+  const manualToggle = document.getElementById('manualConfigToggle');
+  const manualFields = document.getElementById('manualFields');
+  if (manualToggle && manualFields) {
+    manualToggle.addEventListener('click', () => {
+      const isHidden = manualFields.classList.contains('hidden');
+      manualFields.classList.toggle('hidden', !isHidden);
+      manualFields.classList.toggle('flex', isHidden);
+    });
+  }
+
+  // Submit Feedback Simulation
+  const submitBtn = document.getElementById('submitConnectBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      const origContent = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="material-symbols-outlined animate-spin text-xl">progress_activity</span>
+        <span>AUTENTICANDO TERMINAL...</span>
+      `;
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined text-xl">check_circle</span>
+          <span>¡SESIÓN INICIADA!</span>
+        `;
+        submitBtn.classList.remove('bg-primary-container');
+        submitBtn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        setTimeout(() => {
+          submitBtn.classList.add('bg-primary-container');
+          submitBtn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+          submitBtn.innerHTML = origContent;
+        }, 2500);
+      }, 900);
+    });
+  }
+</script></main></body></html>

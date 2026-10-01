@@ -1,0 +1,10 @@
+FERRARI POS MANAGER — V4 CORRECCIONES ANDROID 2026-09-15
+
+- Caja convertida a desplazamiento vertical real: apertura, arqueo, ingresos/egresos y CERRAR CAJA quedan accesibles deslizando hacia abajo.
+- Se eliminó el sonido de los botones/toques.
+- Se conserva únicamente el sonido del escáner.
+- Al cobrar una venta se genera una vibración corta y se limpia completamente el carrito para iniciar una nueva venta.
+- Los abonos también usan vibración corta, sin sonido.
+- Se agregó permiso VIBRATE.
+- Se mantuvo la funcionalidad existente de Windows; los cambios visuales son de Android.
+- Paneles Android con mayor transparencia para un efecto glass/futurista.

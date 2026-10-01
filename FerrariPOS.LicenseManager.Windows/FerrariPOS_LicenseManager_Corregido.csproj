@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>FerrariPOS_LicenseManager_Corregido</AssemblyName>
+    <RootNamespace>FerrariPOS.LicenseManager</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>FerrariPOS_icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="FerrariPOS_logo.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="private_key.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FerrariPOS_icono.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

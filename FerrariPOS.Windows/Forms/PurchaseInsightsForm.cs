@@ -1,0 +1,16 @@
+using FerrarisPOS.Data;
+using FerrarisPOS.Services;
+using System.Data;
+
+namespace FerrarisPOS.Forms;
+
+public sealed class PurchaseInsightsForm : Form
+{
+    private readonly DataGridView reorder=new();
+    private readonly DataGridView prices=new();
+    public PurchaseInsightsForm(){Text="FerrarisPOS · Sugerencias de compra";Width=1120;Height=680;StartPosition=FormStartPosition.CenterParent;Build();LoadData();ThemeService.Apply(this);}
+    private void Build(){Controls.Add(new Label{Text="ABASTECIMIENTO INTELIGENTE",Location=new Point(20,18),AutoSize=true,Font=new Font("Segoe UI",17,FontStyle.Bold)});Controls.Add(new Label{Text="Productos por debajo del mínimo y comparación de costos por proveedor.",Location=new Point(20,50),AutoSize=true});var b=Btn("ACTUALIZAR",900,20,150);b.Click+=(_,_)=>LoadData();Controls.Add(b);Controls.Add(new Label{Text="SUGERENCIAS DE COMPRA",Location=new Point(20,85),AutoSize=true,Font=new Font("Segoe UI",11,FontStyle.Bold)});Configure(reorder);reorder.SetBounds(20,110,1060,230);Controls.Add(reorder);Controls.Add(new Label{Text="COMPARACIÓN DE PROVEEDORES",Location=new Point(20,355),AutoSize=true,Font=new Font("Segoe UI",11,FontStyle.Bold)});Configure(prices);prices.SetBounds(20,380,1060,220);Controls.Add(prices);}
+    private Button Btn(string t,int x,int y,int w)=>new(){Text=t,Location=new Point(x,y),Width=w,Height=36};
+    private static void Configure(DataGridView g){g.ReadOnly=true;g.AllowUserToAddRows=false;g.RowHeadersVisible=false;g.AutoGenerateColumns=true;g.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;g.SelectionMode=DataGridViewSelectionMode.FullRowSelect;}
+    private void LoadData(){if(!InventoryControlService.IsGlobalEnabled){reorder.DataSource=new DataTable();using var cn0=Database.Open();var pt0=new DataTable();using(var c0=cn0.CreateCommand()){c0.CommandText=@"SELECT p.description AS PRODUCTO,s.name AS PROVEEDOR,ROUND(sp.unit_cost,2) AS COSTO FROM supplier_products sp JOIN products p ON p.id=sp.product_id JOIN suppliers s ON s.id=sp.supplier_id WHERE p.active=1 AND sp.unit_cost>0 ORDER BY p.description,sp.unit_cost";using var r0=c0.ExecuteReader();pt0.Load(r0);}prices.DataSource=pt0;return;}using var cn=Database.Open();var dt=new DataTable();using(var c=cn.CreateCommand()){c.CommandText=@"SELECT p.id AS ID,p.description AS PRODUCTO,ROUND(p.stock,3) AS STOCK,ROUND(p.min_stock,3) AS MINIMO,ROUND(CASE WHEN p.min_stock>p.stock THEN p.min_stock-p.stock ELSE 0 END,3) AS SUGERIDO,p.unit AS UNIDAD,COALESCE((SELECT sp.supplier_id FROM supplier_products sp WHERE sp.product_id=p.id ORDER BY sp.unit_cost LIMIT 1),0) AS PROVEEDOR_ID FROM products p WHERE p.active=1 AND p.uses_inventory=1 AND p.stock<=p.min_stock ORDER BY (p.stock-p.min_stock),p.description";using var r=c.ExecuteReader();dt.Load(r);}reorder.DataSource=dt;var pt=new DataTable();using(var c=cn.CreateCommand()){c.CommandText=@"SELECT p.description AS PRODUCTO,s.name AS PROVEEDOR,ROUND(sp.unit_cost,2) AS COSTO FROM supplier_products sp JOIN products p ON p.id=sp.product_id JOIN suppliers s ON s.id=sp.supplier_id WHERE p.active=1 AND sp.unit_cost>0 ORDER BY p.description,sp.unit_cost";using var r=c.ExecuteReader();pt.Load(r);}prices.DataSource=pt;}
+}

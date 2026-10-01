@@ -1,0 +1,11 @@
+FerrariPOS V73.1.55 - IVA 21% SOBRE PRECIO DE COSTO
+
+- El botón SUMAR IVA 21% ahora actúa exclusivamente sobre PRECIO DE COSTO.
+- Activar IVA: costo = costo x 1,21.
+- Desactivar IVA: costo = costo / 1,21.
+- El precio de venta NO recibe IVA por este botón.
+- El precio de venta lo determina únicamente el porcentaje de GANANCIA %.
+- La ganancia en tiempo real se calcula contra el costo efectivo (con IVA si está activo).
+- Si existe un porcentaje de ganancia seleccionado, al activar/desactivar IVA se recalcula el precio de venta inmediatamente.
+- Se agregó migración única para productos de versiones anteriores que tenían IVA activo: su costo almacenado pasa a incluir el 21%, conservando el importe de venta para mantener el margen económico anterior.
+- La migración queda marcada para no volver a multiplicar el costo en los siguientes arranques.

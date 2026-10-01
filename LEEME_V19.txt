@@ -1,0 +1,6 @@
+FERRARI POS V19
+
+Subir el contenido de este proyecto al repositorio GitHub reemplazando la versión anterior únicamente cuando hayas verificado el commit.
+El workflow `.github/workflows/build-ferrari-pos-completo.yml` genera APK Android y publicación Windows.
+La conexión QR/Cloudflare no fue modificada en V19.
+La caja Android continúa siendo la misma caja principal de Windows.

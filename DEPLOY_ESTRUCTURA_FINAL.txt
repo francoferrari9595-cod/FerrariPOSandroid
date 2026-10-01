@@ -1,0 +1,19 @@
+FERRARIPOS - ESTRUCTURA FINAL DE COMPILACION
+
+Se deja UN SOLO workflow de GitHub: .github/workflows/build.yml
+
+Ese workflow contiene exactamente DOS JOBS, como en la captura:
+1) Cliente - Android + Windows + Licencias
+2) FerrariPOS Central Server
+
+Se elimino el workflow duplicado ferraripos-central-build.yml que hacia aparecer ejecuciones/jobs adicionales.
+
+Correccion Central Server:
+- Se agrego Microsoft.Data.Sqlite 8.0.6 al FerrariPOS.CentralServer.csproj.
+- Program.cs usa Microsoft.Data.Sqlite y ahora el paquete queda restaurado en GitHub Actions.
+
+Android:
+- Manager usa Gradle 8.11.1.
+- License Admin Android usa Gradle 8.11.1.
+
+No se crean cuatro workflows. El run de GitHub queda con un solo workflow y los dos jobs mostrados arriba.

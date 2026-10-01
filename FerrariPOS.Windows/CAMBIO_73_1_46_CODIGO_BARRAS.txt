@@ -1,0 +1,10 @@
+FerrariPOS V73.1.46
+
+MEJORA: EDICION DIRECTA POR CODIGO DE BARRAS EN PRODUCTOS
+
+1. Al abrir F3 - PRODUCTOS, el foco queda directamente en CODIGO DE BARRAS.
+2. Al escanear un codigo existente y finalizar con ENTER (comportamiento habitual de lectores USB/Bluetooth), FerrariPOS busca el producto.
+3. Si existe, carga todos los campos: descripcion, costo, precio de venta, mayoreo, stock, minimo, categoria, unidad, granel e inventario.
+4. Se conserva el ID del producto encontrado, por lo que GUARDAR realiza UPDATE y no crea un producto duplicado.
+5. Si el codigo no existe, el codigo queda disponible para dar de alta un producto nuevo.
+6. Tambien se realiza la busqueda al salir del campo de codigo de barras, para facilitar el uso manual o con lectores que no envian ENTER.

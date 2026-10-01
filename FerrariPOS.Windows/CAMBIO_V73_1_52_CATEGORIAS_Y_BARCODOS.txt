@@ -1,0 +1,23 @@
+FerrarisPOS V73.1.52
+====================
+
+1) CORRECCIÓN PROFESIONAL DEL ERROR SQLITE products.barcode
+- Se valida el código antes de INSERT/UPDATE.
+- Se detectan códigos ya usados por otro producto incluso si tienen espacios exteriores.
+- Se detectan también conflictos con códigos internos generados.
+- Si existe una condición de carrera, se captura SQLITE_CONSTRAINT y se transforma en un mensaje amigable.
+- La interfaz de Productos ya no muestra el texto técnico de SQLite (UNIQUE constraint failed: products.barcode).
+- Si el código ya pertenece a otro producto, se informa cuál es y no se pierde la información del formulario.
+
+2) CATEGORÍAS PERSISTENTES
+- Nueva tabla product_categories.
+- Al iniciar la aplicación se migran automáticamente las categorías existentes en products.
+- Las categorías quedan guardadas para reutilizarlas.
+- El campo CATEGORÍA tiene un botón "..." que abre una ventana profesional.
+- Desde esa ventana se puede seleccionar una categoría existente o crear una nueva y usarla inmediatamente.
+- Si alguien escribe una categoría manualmente, también queda registrada automáticamente.
+
+3) COMPATIBILIDAD
+- Se mantiene el campo products.category como texto para no romper módulos existentes, importaciones, reportes ni ventas.
+- No se modifica el stock ni ningún dato de ventas al actualizar un producto.
+

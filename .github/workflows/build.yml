@@ -1,0 +1,156 @@
+name: FerrariPOS - Compilación completa
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ferraripos-full-build
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows Manager + Licencias
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Validar Central Server
+        shell: powershell
+        run: |
+          dotnet restore Nexo/FerrariPOS.CentralServer/FerrariPOS.CentralServer.csproj
+          dotnet build Nexo/FerrariPOS.CentralServer/FerrariPOS.CentralServer.csproj -c Release --no-restore
+          if ($LASTEXITCODE -ne 0) { throw 'Central Server no compila.' }
+
+      - name: Publicar Windows Manager EXE
+        working-directory: FerrariPOS.Windows
+        shell: powershell
+        run: |
+          dotnet restore FerrariPOS.csproj
+          dotnet publish FerrariPOS.csproj -c Release -r win-x64 --self-contained true -o publish -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false
+          if (!(Test-Path publish/FerrarisPOS.exe)) { throw 'No se genero FerrarisPOS.exe.' }
+
+      - name: Preparar Cloudflare Quick Tunnel
+        working-directory: FerrariPOS.Windows
+        shell: powershell
+        run: |
+          $cf = Join-Path $PWD 'publish\cloudflared.exe'
+          $url = 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe'
+          Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $cf -TimeoutSec 120
+          if ((Get-Item $cf).Length -lt 5000000) { throw 'cloudflared incompleto.' }
+          & $cf --version
+
+      - name: Instalar Inno Setup
+        shell: powershell
+        run: choco install innosetup --no-progress -y
+
+      - name: Crear Windows Manager Setup
+        shell: powershell
+        run: |
+          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
+          if (!(Test-Path $iscc)) {
+            $iscc = (Get-Command ISCC.exe -ErrorAction SilentlyContinue).Source
+          }
+          if (!$iscc -or !(Test-Path $iscc)) {
+            $candidates = @(
+              (Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'),
+              (Join-Path $env:ProgramFiles 'Inno Setup 6\ISCC.exe'),
+              'C:\Program Files (x86)\Inno Setup 6\ISCC.exe',
+              'C:\Program Files\Inno Setup 6\ISCC.exe'
+            )
+            $iscc = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+          }
+          if (!$iscc -or !(Test-Path $iscc)) { throw 'ISCC.exe no encontrado después de instalar Inno Setup.' }
+          $projectDir = (Resolve-Path 'FerrariPOS.Windows').Path
+          $buildDir = (Resolve-Path 'FerrariPOS.Windows\publish').Path
+          $outputDir = Join-Path $PWD 'artifacts\windows-setup'
+          $issFile = (Resolve-Path 'FerrariPOS.Windows\Setup_FerrariPOS_V73_1_57.iss').Path
+          $iconFile = Join-Path $projectDir 'FerrariPOS_icono.ico'
+          if (!(Test-Path $iconFile)) { throw "No se encontro el icono del instalador: $iconFile" }
+          New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
+          & $iscc "/DProjectDir=$projectDir" "/DBuildDir=$buildDir" "/DOutputDir=$outputDir" $issFile
+          if ($LASTEXITCODE -ne 0) { throw 'Inno Setup fallo.' }
+          New-Item -ItemType Directory -Force -Path artifacts\windows-setup | Out-Null
+          $setup = Get-ChildItem -Path artifacts\windows-setup -Filter *.exe | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (!$setup) { throw 'No se encontro el instalador de Windows.' }
+          if ($setup.Name -ne 'FerrariPOS-Manager-Setup.exe') { Rename-Item $setup.FullName FerrariPOS-Manager-Setup.exe -Force }
+
+      - name: Publicar Windows License EXE
+        working-directory: FerrariPOS.LicenseManager.Windows
+        shell: powershell
+        run: |
+          dotnet restore FerrariPOS_LicenseManager_Corregido.csproj
+          dotnet publish FerrariPOS_LicenseManager_Corregido.csproj -c Release -r win-x64 --self-contained true -o publish -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false
+          if (!(Test-Path publish/FerrariPOS_LicenseManager_Corregido.exe)) { throw 'No se genero el EXE de Licencias.' }
+
+      - name: Artifact Windows Manager EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows-Manager-EXE
+          path: FerrariPOS.Windows/publish/FerrarisPOS.exe
+          if-no-files-found: error
+
+      - name: Artifact Windows Manager Setup
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows-Manager-Setup
+          path: artifacts/windows-setup/FerrariPOS-Manager-Setup.exe
+          if-no-files-found: error
+
+      - name: Artifact Windows Licencias EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows-Licencias-EXE
+          path: FerrariPOS.LicenseManager.Windows/publish/FerrariPOS_LicenseManager_Corregido.exe
+          if-no-files-found: error
+
+  android-manager:
+    name: Android Manager APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - name: Compilar Manager Android
+        working-directory: FerrariPOS.Manager.Android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace assembleRelease
+      - name: Artifact Android Manager
+        uses: actions/upload-artifact@v4
+        with:
+          name: Android-Manager
+          path: FerrariPOS.Manager.Android/app/build/outputs/apk/release/*.apk
+          if-no-files-found: error
+
+  android-license:
+    name: Android Licencia APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - name: Compilar Licencia Android
+        working-directory: FerrariPOS.LicenseAdmin.Android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace assembleRelease
+      - name: Artifact Android Licencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: Android-Licencia
+          path: FerrariPOS.LicenseAdmin.Android/app/build/outputs/apk/release/*.apk
+          if-no-files-found: error

@@ -1,0 +1,23 @@
+CORRECCION FERRARIPOS ANDROID - 15/09/2026
+
+PROBLEMA:
+El APK compilaba correctamente, pero al tocar el icono en Android se cerraba inmediatamente.
+
+CAUSA ENCONTRADA:
+AndroidManifest.xml declaraba como launcher a .MainActivity, pero MainActivity.kt no contenia
+la clase MainActivity. El proyecto tenia toda la interfaz Compose y ManagerApp(), pero faltaba
+la Activity que Android necesita para iniciar la aplicacion.
+
+CORRECCION:
+Se agrego MainActivity : ComponentActivity con onCreate() y setContent { ManagerApp() }.
+No se modifico el diseño, las pantallas, la paleta, el splash, las funciones ni los recursos
+del icono.
+
+COMPILACION:
+- GitHub Actions: .github/workflows/build.yml usa ahora el Gradle Wrapper del proyecto.
+- Local Android: FerrariPOS.Manager.Android/BUILD_ANDROID.bat
+- Acceso rapido raiz: COMPILAR_ANDROID.bat
+- Windows queda separado en COMPILAR_WINDOWS.bat y sus scripts originales.
+
+ICONO:
+Se conservaron ic_launcher, ic_launcher_round y ferrari_launcher_foreground existentes.

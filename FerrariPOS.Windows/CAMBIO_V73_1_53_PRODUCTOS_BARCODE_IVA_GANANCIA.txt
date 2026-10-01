@@ -1,0 +1,28 @@
+FerrariPOS V73.1.53 - Productos: barcode, IVA 21% y ganancia en tiempo real
+
+1. CÓDIGO DE BARRAS
+- Al crear un producto nuevo, si el mismo barcode existe únicamente en un producto INACTIVO, el sistema libera automáticamente ese barcode.
+- Si el producto inactivo no tiene referencias históricas, se elimina físicamente.
+- Si tiene historial, se conserva para no romper ventas/reportes y se le asigna un identificador de archivo único, dejando el barcode disponible para el producto nuevo.
+- También se limpian códigos internos huérfanos o vinculados a productos inactivos.
+- Los códigos pertenecientes a productos activos siguen protegidos: no se pisan ni se eliminan.
+- La protección final contra SQLite Error 19 sigue activa para que nunca se muestre el texto técnico del UNIQUE al usuario.
+
+2. IVA 21% POR PRODUCTO
+- Nuevo botón de una sola dirección: SUMAR IVA 21%.
+- Al activarlo, suma 21% al precio de venta actual.
+- Queda guardado permanentemente en la base de datos.
+- Al volver a editar el producto se muestra IVA 21% ACTIVO y no se puede desactivar desde ese botón.
+- Si se usa GANANCIA %, el cálculo se hace sobre el precio neto y luego se suma IVA; el IVA no se cuenta como ganancia.
+
+3. GANANCIA EN TIEMPO REAL
+- El precio de venta se recalcula inmediatamente al cambiar costo + porcentaje.
+- El porcentaje personalizado se aplica mientras se escribe.
+- Si se modifica manualmente el precio de venta, se muestra inmediatamente GANANCIA ACTUAL.
+- Con IVA activo, la ganancia se calcula sobre el precio de venta sin IVA.
+
+4. CATEGORÍAS
+- Se conserva el sistema de categorías persistentes de V73.1.52.
+
+NOTA
+- No se elimina físicamente un producto inactivo si tiene historial que pueda ser necesario para conservar integridad de ventas, devoluciones, movimientos o compras. En ese caso solo se libera el barcode mediante archivado interno.

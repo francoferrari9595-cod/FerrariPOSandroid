@@ -1,0 +1,10 @@
+ETAPA 3 - POSTGRES + MULTI-TIENDA
+
+1) Subir el contenido a GitHub con SUBIR_FERRARIPOS_COMPLETO_POR_LINK.bat.
+2) En Render, crear/adjuntar PostgreSQL ferraripos-central-db.
+3) Configurar DATABASE_URL con la Internal Database URL.
+4) Redeploy.
+5) Comprobar /health: debe indicar database=ok.
+6) No modificar manualmente la URL central del cliente.
+
+El comprador final NO hace estos pasos. Son de despliegue de FerrariPOS.

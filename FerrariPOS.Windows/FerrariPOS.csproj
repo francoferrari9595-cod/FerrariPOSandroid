@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>FerrarisPOS</RootNamespace>
+    <ApplicationIcon>FerrariPOS_icono.ico</ApplicationIcon>
+    <AssemblyName>FerrarisPOS</AssemblyName>
+    <Platforms>AnyCPU</Platforms>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <Version>73.1.57</Version>
+    <AssemblyVersion>73.1.57.0</AssemblyVersion>
+    <FileVersion>73.1.57.0</FileVersion>
+    <InformationalVersion>Ferrari'sPOS V73.1.57 - Windows 10/11; Cloudflare automático + recuperación de red + venta por granel</InformationalVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.11" />
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="license_server.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\cash_register.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\trash_delete.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+      <None Update="FerrariPOS_icono.ico"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="FerrariPOS_logo.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="FerrariPOS_logo_transparente.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="FerrariPOS_login_poster.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="FerrariPOS_login_poster_original_backup.png"><CopyToOutputDirectory>Never</CopyToOutputDirectory></None>
+    <None Update="Resources\FerrariPOS_marca_agua.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="Resources\pos_background.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Update="Resources\tables3d\*.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+  </ItemGroup>
+</Project>

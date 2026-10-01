@@ -1,0 +1,26 @@
+FERRARIPOS V17.4 - PROYECTO COMPLETO PARA GITHUB
+
+Base: V17.2 + corrección V17.3 de selección de proveedores/productos en Android.
+
+CONTENIDO:
+- FerrariPOS.Windows completo.
+- FerrariPOS.Manager.Android completo.
+- .github/workflows completo.
+- Scripts BAT y archivos de configuración.
+- Correcciones anteriores conservadas.
+
+CAMBIO DE ESTA VERSIÓN:
+- Android: selector de proveedores/productos corregido para permitir búsqueda y selección táctil.
+- Se conserva Compras, carrito, recepción y recepción con diferencia.
+- NO se modifica la conexión QR/red/Cloudflare/token/fallback/reconexión.
+- NO se modifica Windows en esta revisión.
+
+PARA GITHUB:
+1. Descargar y descomprimir este ZIP.
+2. Reemplazar TODO el contenido del repositorio con el contenido de esta carpeta.
+3. Mantener la rama main.
+4. Confirmar los cambios.
+5. Ejecutar GitHub Actions y comprobar la compilación Android y Windows.
+
+IMPORTANTE:
+Esta entrega contiene el proyecto completo, no solamente Android.

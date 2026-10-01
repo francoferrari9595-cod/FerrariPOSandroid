@@ -1,0 +1,19 @@
+FERRARI POS MANAGER V16.1 · CORRECCIÓN QR / CLOUDFLARE / NEON
+
+1. CORRECCIÓN PRINCIPAL
+- El Quick Tunnel ya no se reinicia por dos fallos temporales de salud.
+- Se conserva la URL pública mientras cloudflared intenta recuperarse.
+- Solo se reinicia después de 90 segundos continuos sin respuesta pública.
+
+2. ANDROID
+- Reintentos GET para 502/503/504/530 y errores de red.
+- Nunca se reintentan POST/PUT/DELETE automáticamente para evitar duplicados.
+- Error 530 durante vinculación no borra la configuración guardada.
+- Payload QR incluye URL LAN de respaldo.
+
+3. UI
+- QR de conexión únicamente dentro de F7 · Configuración.
+- Pantalla inicial sin conexión sin escáner QR.
+- FERRARIPOS en blanco y MANAGER en rojo neón.
+- COBRAR con pulso, escala y doble halo neón más visible.
+- Paleta principal negro grafito / blanco / rojo Ferrari neón.

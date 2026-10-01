@@ -1,0 +1,13 @@
+FERRARI POS MANAGER V16.9
+
+1) Descomprimir este proyecto completo.
+2) Reemplazar TODO el contenido del repositorio GitHub por el contenido de esta carpeta.
+3) Mantener la rama main.
+4) Si usás el BAT incluido, ejecutar SUBIR_A_GITHUB.bat desde esta carpeta y pegar el enlace del repositorio.
+5) GitHub Actions compilará Android y Windows como artefactos independientes.
+
+IMPORTANTE:
+- Android no fue modificado en esta corrección.
+- La conexión QR/sincronización estable de V16.8 se conserva.
+- Los tickets móviles vacíos se eliminan automáticamente del almacenamiento para que no reaparezcan.
+- Los tickets con productos requieren confirmación antes de eliminarse.

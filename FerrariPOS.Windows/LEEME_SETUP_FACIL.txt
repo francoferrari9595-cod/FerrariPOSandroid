@@ -1,0 +1,15 @@
+FERRARIPOS V73.1.46 - SETUP FACIL
+
+1. Descomprime este ZIP.
+2. Entra a la carpeta Proyecto.
+3. Ejecuta AUTO_SETUP.bat con doble clic.
+4. El proceso solicita permisos de administrador automaticamente.
+5. Si falta .NET 8 SDK, intenta instalarlo mediante winget.
+6. Si falta Inno Setup, lo descarga automaticamente desde la distribucion oficial de Inno Setup y lo instala en modo silencioso.
+7. Detecta ISCC.exe y genera FerrariPOS_Setup_V73.1.46.exe.
+
+No hace falta instalar Inno Setup manualmente.
+
+REQUISITO: conexion a Internet durante la descarga automatica de Inno Setup (y de .NET si fuera necesario).
+
+El Setup solo prepara el instalador; no cambia el codigo funcional de FerrariPOS.

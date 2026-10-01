@@ -1,0 +1,68 @@
+FERRARIPOS V73.1.52 · PACK FINAL CERRADO
+
+ULTIMOS CAMBIOS INTEGRADOS
+
+1. INVENTARIO Y EXISTENCIAS
+- Búsqueda manual exclusivamente por comienzo de descripción.
+- Código de barras exacto identifica directamente el producto.
+- Permite entrada/salida de stock sobre el producto seleccionado.
+
+2. CAJA · CIERRE DE TURNO / CORTE Z
+- CIERRE DE CAJA mantiene el cierre del turno actual.
+- CORTE Z GENERAL DEL DÍA consolida todos los cajeros/turnos y no cierra ninguna caja.
+- Corte Z genera TXT y Excel.
+
+3. ABONOS DE CLIENTES · F2
+- Medios: EFECTIVO, MERCADO PAGO, TARJETA, TRANSFERENCIA y MIXTO.
+- EFECTIVO genera INCOME/EFECTIVO y afecta el efectivo esperado.
+- MERCADO PAGO, TARJETA y TRANSFERENCIA generan ingreso digital a la caja paralela de MERCADO PAGO.
+- Los abonos quedan en customer_accounts.
+
+4. CLIENTES · REPORTES
+- El reporte diario incluye clientes con deuda pendiente y clientes que abonaron durante el día aunque queden en $0.
+- Muestra deuda actual, abonos del día y estado.
+- Incluye total de abonos del día.
+
+5. INGRESOS / EGRESOS
+- Botón VER TODOS LOS INGRESOS / EGRESOS desde Caja y F11.
+- Lista completa con filtros y búsqueda.
+- Anulación con explicación obligatoria.
+- La anulación NO borra el historial: marca el movimiento como ANULADO y conserva motivo, usuario y fecha.
+- Los cálculos de caja, arqueo, cierre, Excel, PDF y reporte excluyen movimientos anulados.
+- Por lo tanto, si se ingresan $9.000 y luego se anula, la caja vuelve exactamente al saldo esperado anterior a ese ingreso, tanto para EFECTIVO como para MERCADO PAGO.
+
+6. CONTROL WEB
+- Arqueo web excluye movimientos anulados del efectivo y Mercado Pago esperado.
+- Movimientos web muestran ACTIVO/ANULADO y motivo de anulación.
+- Los gráficos de ingresos/egresos del web excluyen movimientos anulados.
+- Clientes web muestran deuda, abonos del día, último medio y estado.
+
+7. REPORTE FINAL / EMAIL
+- El email de cierre incluye ingresos/egresos activos.
+- Incluye movimientos anulados con explicación y usuario que anuló.
+- Incluye clientes con deuda y abonos del día, incluso si el cliente quedó al día.
+- Excel del cierre conserva el historial completo y el estado ACTIVO/ANULADO.
+
+8. SETUP
+- Publicación en carpeta temporal para evitar Access is denied sobre EXE/FerrarisPOS.exe.
+- Se corrigió el mensaje del batch y se mantiene el flujo de instalación con Inno Setup.
+
+VERIFICACION LOGICA
+- CashService.Summary(): todos los INCOME/EXPENSE usados para saldo tienen COALESCE(voided,0)=0.
+- GeneralCashClosingService: ingresos/egresos y movimientos de efectivo excluyen anulados.
+- WebDashboardServer: arqueo y gráficos excluyen anulados; el historial web muestra el estado y motivo.
+- ReportService y CashClosingPdfService: listan activos y separan anulados; el email incorpora deuda/abonos del día.
+- CashExcelService: conserva todos los movimientos y su estado.
+- CustomerService: abonos en efectivo afectan EFECTIVO; abonos digitales (MP/TARJETA/TRANSFERENCIA) afectan caja paralela MERCADO PAGO.
+
+PRUEBA LOGICA DE ANULACION
+- Ingreso efectivo $9.000: efectivo esperado = saldo anterior + $9.000.
+- Anulación: el movimiento queda voided=1.
+- Nuevo efectivo esperado = saldo anterior; el $9.000 deja de sumar.
+- Egreso efectivo $9.000: efectivo esperado = saldo anterior - $9.000.
+- Anulación: el egreso deja de restar y se recupera el saldo anterior.
+- Lo mismo aplica al medio MERCADO PAGO en su saldo esperado.
+
+NOTA DE COMPILACION
+- El entorno de trabajo actual no contiene dotnet, por lo que no se pudo ejecutar una compilación .NET real aquí.
+- El código y el setup quedan preparados para compilar en Windows con .NET 8 SDK.

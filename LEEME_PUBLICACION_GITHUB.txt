@@ -1,0 +1,17 @@
+PUBLICACIÓN GITHUB + ACTIONS
+
+Usar únicamente SUBIR_TODO_GITHUB.bat.
+
+El BAT publica el proyecto local completo en main usando Git for Windows. No requiere GitHub CLI (gh). Si GitHub ya tiene una versión anterior, reemplaza main con el proyecto local para evitar el error "fetch first" / "non-fast-forward".
+El workflow .github/workflows/build.yml inicia automáticamente una compilación al hacer push a main.
+El error anterior de Android SDK se debía a pedir el paquete obsoleto/inexistente "tools".
+Ahora se instalan únicamente platform-tools, platforms;android-35 y build-tools;35.0.0.
+
+RESPALDO CLIENTES Y CUENTAS
+FerrariPOS mantiene SQLite como base operativa y crea automáticamente un Excel oculto:
+RespaldoClientes\FerrariPOS_Clientes_Cuentas.xlsx
+Se actualiza al iniciar el programa y después de guardar/desactivar clientes, registrar abonos y registrar ventas a crédito.
+Si Windows impide escribir dentro de la instalación, usa automáticamente AppData\FerrarisPOS\RespaldoClientes.
+
+
+V16.9: corrección Windows para eliminación persistente de tickets móviles vacíos.

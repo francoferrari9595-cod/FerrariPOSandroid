@@ -1,0 +1,11 @@
+FERRARISPOS V73.1.51 · ABONOS DE CLIENTES EN REPORTE Y PANEL WEB
+
+CAMBIO:
+- El reporte final del día ahora incluye una sección CLIENTES CON DEUDA / ABONOS DEL DÍA.
+- Se informa por cliente: deuda actual, total abonado durante el día y estado (PENDIENTE / AL DÍA).
+- Se incluyen también clientes que abonaron y quedaron al día, para que el abono no desaparezca del reporte.
+- Se informa el TOTAL ABONOS DE CLIENTES HOY.
+- El panel web, en CLIENTES, ahora muestra únicamente clientes con deuda pendiente o que tuvieron abonos durante el día.
+- El panel web agrega ABONOS HOY y ÚLTIMO MEDIO, manteniendo la deuda actual y el estado.
+- Los datos se actualizan con la recarga automática del panel.
+- No se modifica la lógica de ventas ni el resto de los reportes.

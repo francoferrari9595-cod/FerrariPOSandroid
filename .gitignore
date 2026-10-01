@@ -1,0 +1,23 @@
+# .NET
+**/bin/
+**/obj/
+**/publish/
+**/EXE/
+**/installer/
+*.user
+*.suo
+
+# Android/Gradle
+**/.gradle/
+**/build/
+
+# Local/editor/OS
+.vs/
+.idea/
+*.tmp
+Thumbs.db
+Desktop.ini
+
+# Local secrets / generated runtime data
+*.db-shm
+*.db-wal

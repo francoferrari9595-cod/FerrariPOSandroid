@@ -1,0 +1,24 @@
+Ferrari'sPOS V73.1.46 - Corrección de Compras y Temas
+
+1) Compras > Nueva compra / Armar pedido
+- El selector PROVEEDOR ahora es una lista desplegable real (DropDownList).
+- Se amplió el desplegable para mostrar hasta 20 proveedores y se aumentó su ancho.
+- Al hacer clic sobre el selector se fuerza la apertura cuando existen varios proveedores.
+- La consulta de proveedores incluye todos los proveedores registrados, ordenando primero los activos.
+- No se modificó la lógica de productos asignados al proveedor ni la generación/guardado de órdenes.
+
+2) Tema Claro
+- Los textos de productos y grillas quedan en negro/gris oscuro.
+- Se eliminan los colores verde/naranja fluorescentes del texto en tema Claro.
+- También se limpian estilos neón anteriores al cambiar desde Oscuro a Claro.
+- El tema Oscuro de fábrica conserva su comportamiento y paleta original.
+
+3) Cinco temas adicionales
+- Rojo Ferrari
+- Violeta
+- Turquesa
+- Rosa
+- Gris
+
+El tema de fábrica continúa siendo Oscuro y sigue siendo el valor predeterminado.
+No se modificaron PostgreSQL, Cloudflare/R2, cuentas, Store ID, API keys ni la lógica de conexión.

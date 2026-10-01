@@ -1,0 +1,20 @@
+FERRARISPOS® V73.1.51 · CORRECCIÓN ABONOS DE CLIENTES / CAJA PARALELA
+
+Ventana: F2 CLIENTES → ABONAR DEUDA
+
+Cambios realizados:
+- Se agregó MERCADO PAGO como forma de pago para abonar deuda.
+- Se agregó TRANSFERENCIA como forma de pago.
+- Se mantiene EFECTIVO y TARJETA.
+- Se mantiene la opción MIXTO y ahora permite combinar EFECTIVO, MERCADO PAGO, TARJETA y TRANSFERENCIA.
+- Los abonos en EFECTIVO generan un movimiento INCOME en la caja física del turno, por lo que influyen en el efectivo esperado del cierre.
+- Los abonos en MERCADO PAGO generan un movimiento INCOME en la caja paralela de Mercado Pago.
+- Los abonos en TARJETA se mantienen registrados como TARJETA en la cuenta del cliente y, además, se reflejan como ingreso digital en la caja paralela de Mercado Pago.
+- Los abonos por TRANSFERENCIA se mantienen registrados como TRANSFERENCIA en la cuenta del cliente y, además, se reflejan como ingreso digital en la caja paralela de Mercado Pago.
+- En pagos MIXTOS, cada componente se registra por separado en la cuenta del cliente; efectivo impacta caja física y todos los componentes digitales (MP + tarjeta + transferencia) impactan la caja paralela de Mercado Pago.
+- Para cualquier abono digital se exige que la caja paralela de Mercado Pago esté habilitada en la apertura de caja, evitando que el saldo esperado quede incompleto.
+- Los movimientos digitales reflejados en Mercado Pago quedan vinculados al movimiento de la cuenta corriente mediante reference_id para trazabilidad.
+
+IMPORTANTE:
+- Esta modificación corresponde a ABONOS DE CUENTAS CORRIENTES (F2 CLIENTES).
+- No cambia la forma en que se registran las ventas normales ni otros medios de pago fuera de esta ventana.

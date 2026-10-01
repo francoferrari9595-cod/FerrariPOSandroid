@@ -1,0 +1,10 @@
+CORRECCIONES 2026-09-15
+
+1. Nombre visible de la aplicacion Android: FERRARI POS MANAGER.
+2. Se conserva el icono existente y todo el aspecto/funcionalidad.
+3. El error de GitHub se debia a que FerrariPOS.Manager.Android/gradlew era un script Linux que intentaba ejecutar gradlew.bat. En ubuntu-latest eso produce Permission denied y codigo 126.
+4. Ahora gradlew es un launcher Linux real y el workflow hace chmod +x antes de ejecutarlo.
+5. El workflow Android queda separado: .github/workflows/build-android.yml.
+6. El workflow Windows queda separado: .github/workflows/build-windows.yml y no se ejecuta al publicar Android en main.
+7. PUBLICAR_ANDROID_GITHUB.bat solo pide el LINK del repositorio. Publica automaticamente en MAIN; no pregunta rama ni confirmacion.
+8. COMPILAR_ANDROID.bat y COMPILAR_ANDROID_FERRARIPOS.bat hacen lo mismo: pedir solo el link y publicar.

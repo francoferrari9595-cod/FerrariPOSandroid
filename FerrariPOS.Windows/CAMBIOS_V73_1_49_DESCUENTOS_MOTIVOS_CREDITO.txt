@@ -1,0 +1,37 @@
+Ferrari'sPOS V73.1.49
+
+CAMBIOS DE ESTA VERSION
+
+1. DESCUENTOS CON MOTIVO OBLIGATORIO
+- Si una venta tiene descuento en uno o mas productos, al finalizar con F12 se solicita obligatoriamente el motivo.
+- Si la venta tiene descuento general aplicado desde el TOTAL, al finalizar con F12 tambien se solicita el motivo.
+- Si existen ambos tipos de descuento, se registra el mismo motivo en la venta y en cada producto que tenga descuento.
+- Si no hay descuentos, no se solicita ningun motivo.
+- Si el usuario cancela o deja vacio el motivo, la venta no se finaliza.
+
+2. REGISTRO DETALLADO EN REPORTES Y CIERRE DE CAJA
+- Se agregaron los campos discount_reason en sales y sale_items mediante migracion automatica, sin borrar datos existentes.
+- El reporte diario muestra una alerta de descuentos otorgados, indicando ticket, responsable, importe, motivo y productos afectados.
+- El cierre ejecutivo PDF muestra los descuentos con motivo y detalle.
+- El resumen enviado por correo incluye el detalle de descuentos.
+- El TXT/Excel detallado del cierre incluye motivo por ticket y por producto.
+- La auditoria de la venta tambien conserva el motivo del descuento.
+
+3. MEDIOS DE PAGO / CREDITO
+- Las flechas izquierda y derecha recorren todos los medios disponibles en modo bucle.
+- CRÉDITO puede seleccionarse con las flechas sin cambiar automaticamente de solapa.
+- Al elegir CRÉDITO, el primer ENTER entra a la solapa de credito/cuenta corriente.
+- Luego se puede seleccionar el cliente/deudor y continuar con el cobro.
+- Se mantiene ENTER como confirmacion de cobro para los demas medios y F1/F2.
+
+CAMBIOS ANTERIORES CONSERVADOS
+- Busqueda escrita de deudores/clientes en credito.
+- Descuento general tocando el TOTAL grande de F1 Venta.
+- Cobro con ENTER despues de F12.
+- Navegacion de medios de pago con flechas en bucle.
+
+SEGURIDAD DE RED / INSTALADOR
+- No se modifico la logica de Quick Tunnel de Cloudflare.
+- No se modifico cloudflared, trycloudflare.com, WebDashboardServer ni NetworkRecovery.
+- No se modifico Setup_Network_Cloudflare.ps1.
+- No se modifico la logica de Inno Setup.

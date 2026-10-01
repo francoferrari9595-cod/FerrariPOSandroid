@@ -1,0 +1,10 @@
+FerrariPOS V17.2
+
+Reemplazar el contenido completo del repositorio con este proyecto.
+
+Cambios:
+1. Android: selección de proveedor y producto reconstruida con diálogos estándar táctiles.
+2. Android: se conserva carrito, órdenes y recepción.
+3. Windows: reportes y calendarios muestran hora local del equipo mediante SQLite localtime.
+4. API Windows->Android: fechas de ventas, compras y caja se entregan en hora local del equipo Windows.
+5. NO se modificó QR, red, Cloudflare, token, fallback ni reconexión.

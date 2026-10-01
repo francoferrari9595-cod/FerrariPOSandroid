@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FerrarisPOS": {
+      "commandName": "Project",
+      "workingDirectory": "."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+FERRARIPOS V73.1.45 - AUTO SETUP COMPLETO
+===========================================
+
+Esta entrega mantiene la configuracion de red/Cloudflare existente y la correccion de productos para que modificar Venta por Granel no reinicie los demas datos del producto.
+
+AUTO_SETUP.bat:
+- Ejecutar como administrador.
+- Comprueba/instala .NET 8 SDK e Inno Setup mediante winget si faltan.
+- Publica FerrariPOS autocontenido para Windows 10/11 x64.
+- Descarga e incluye cloudflared oficial cuando esta disponible.
+- Genera unicamente FerrariPOS_Setup_V73.1.45.exe.
+- NO ejecuta el instalador al terminar.
+- NO cambia la configuracion de la instalacion existente.
+
+INSTALADOR:
+- Incluye FerrariPOS autocontenido.
+- Incluye cloudflared como respaldo local.
+- Ejecuta Setup_Network_Cloudflare.ps1 durante la instalacion para preparar red, DNS y firewall.
+- FerrariPOS inicia el servidor web y solicita un Quick Tunnel de Cloudflare automaticamente al iniciar.
+- Si el tunel se cae, FerrariPOS puede reintentarlo segun la logica existente del programa.
+
+IMPORTANTE:
+- El Quick Tunnel requiere Internet en la PC que ejecuta FerrariPOS.
+- La URL trycloudflare.com es temporal y puede cambiar al crear un nuevo tunel.
+- No se modifico la configuracion funcional de Cloudflare existente.

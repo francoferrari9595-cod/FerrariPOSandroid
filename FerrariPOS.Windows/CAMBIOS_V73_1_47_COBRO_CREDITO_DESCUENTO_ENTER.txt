@@ -1,0 +1,24 @@
+Ferrari'sPOS V73.1.47
+
+CAMBIOS INCORPORADOS
+
+1. CRÉDITO / CUENTA CORRIENTE
+- Se reemplazó la dependencia de la lista desplegable grande para buscar deudores.
+- Ahora la solapa de crédito tiene un campo para escribir el nombre y filtrar clientes.
+- Debajo aparece una lista pequeña con los resultados encontrados.
+- Enter en el buscador selecciona el primer resultado.
+- La lógica interna de crédito, límites y saldos se conserva.
+
+2. DESCUENTO GENERAL DEL TICKET
+- En la pantalla principal de F1 Venta, el TOTAL grande es ahora interactivo.
+- Al tocar/clickear el TOTAL se abre una ventana de DESCUENTO GENERAL DEL TICKET.
+- Se puede indicar porcentaje o monto.
+- El descuento general se distribuye entre los renglones del ticket para que quede registrado correctamente en la venta.
+- Se puede volver a abrir y modificar o quitar el descuento general.
+
+3. COBRO CON ENTER
+- Después de abrir F12 · COBRAR, la tecla ENTER también confirma el cobro.
+- F1 y F2 siguen funcionando como antes.
+- El buscador de clientes de crédito conserva Enter para seleccionar el cliente sin cerrar accidentalmente la ventana de cobro.
+
+Versión: 73.1.47

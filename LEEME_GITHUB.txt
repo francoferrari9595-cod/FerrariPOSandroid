@@ -1,0 +1,21 @@
+FERRARI POS MANAGER - PUBLICACION GITHUB
+
+1. Ejecutar GITHUB.bat desde la carpeta raiz de este proyecto.
+2. El BAT pide el link completo del repositorio GitHub.
+3. La rama se publica como MAIN.
+4. El proyecto Android esta en FerrariPOS.Manager.Android y contiene gradlew/gradlew.bat.
+5. El proyecto Windows esta en FerrariPOS.Windows/FerrariPOS.sln.
+6. GitHub Actions compila Android y Windows en trabajos separados.
+
+IMPORTANTE: este paquete conserva el codigo del proyecto V19.1. No modifica QR,
+conexion, Cloudflare, red, sincronizacion ni API de conexion.
+
+
+ARTEFACTOS GITHUB
+=================
+La Action entrega cuatro archivos separados:
+1) FerrariPOS-Manager-Android -> APK de Android Manager.
+2) FerrariPOS-Licencias-Android -> APK de Android Licencias.
+3) FerrariPOS-Windows-EXE -> FerrarisPOS.exe standalone.
+4) FerrariPOS-Windows-Setup -> FerrariPOS_Setup_V73.1.57.exe generado con Inno Setup.
+El instalador es el que se debe usar para instalar FerrariPOS en otra PC; no es necesario descargar la carpeta publish.

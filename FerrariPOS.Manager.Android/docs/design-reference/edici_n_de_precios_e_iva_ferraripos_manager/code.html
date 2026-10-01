@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#005236", "on-primary-fixed-variant": "#93000b", "background": "#0b1326", "on-tertiary-fixed": "#001e2f", "primary-container": "#dc2626", "inverse-primary": "#bf0715", "on-primary-container": "#fff6f5", "surface-container": "#171f33", "on-primary-fixed": "#410002", "primary-fixed": "#ffdad6", "primary": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "on-tertiary": "#00344e", "surface-container-high": "#222a3d", "on-primary": "#690005", "secondary-fixed": "#6ffbbe", "secondary-container": "#00a572", "on-secondary-container": "#00311f", "on-secondary-fixed": "#002113", "surface-tint": "#ffb4ab", "tertiary-container": "#0079af", "surface-dim": "#0b1326", "on-surface": "#dae2fd", "on-error": "#690005", "inverse-on-surface": "#283044", "on-surface-variant": "#e6bdb8", "surface-container-highest": "#2d3449", "primary-fixed-dim": "#ffb4ab", "on-secondary": "#003824", "on-tertiary-container": "#f4f9ff", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#004b6f", "tertiary": "#8bceff", "outline-variant": "#5c403c", "outline": "#ac8884", "surface": "#0b1326", "error": "#ffb4ab", "surface-variant": "#2d3449", "tertiary-fixed": "#c9e6ff", "tertiary-fixed-dim": "#8bceff", "surface-container-lowest": "#060e20", "inverse-surface": "#dae2fd", "on-background": "#dae2fd", "surface-container-low": "#131b2e", "error-container": "#93000a", "secondary": "#4edea3", "surface-bright": "#31394d" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "label-action": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-kpi-mobile": ["Inter"], "label-kpi-badge": ["JetBrains Mono"], "display-kpi": ["Inter"], "headline-md": ["Inter"], "label-numeric": ["JetBrains Mono"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-action": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-kpi-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-kpi-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-kpi": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-numeric": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col select-none"><header class="fixed top-0 inset-x-0 z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><button aria-label="Volver" class="w-11 h-11 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface active:bg-surface-container-highest transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Detalle Producto</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe px-margin bg-surface flex-1"><div class="flex flex-col w-full pb-8 gap-space-lg">
+<!-- Status / Telemetry bar -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-container"></span>
+</span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-secondary tracking-wider">FERRARIPOS LAN: ONLINE</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-kpi-badge text-label-kpi-badge">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+<span>ETag: #REV-9428A</span>
+</div>
+</div>
+<!-- Search & Barcode Quick Action -->
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 flex items-center bg-surface-container-high rounded-xl overflow-hidden shadow-sm">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-transparent pl-10 pr-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" id="productSearchInput" placeholder="Buscar por código de barras o nombre..." type="text" value="7790272001053"/>
+</div>
+<button aria-label="Escanear código de barras con cámara" class="h-12 w-12 flex items-center justify-center rounded-xl bg-primary-container text-on-primary-container shadow-md active:scale-95 transition-transform" id="cameraScanBtn" title="Escanear con cámara">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</button>
+</div>
+<!-- Quick Filter Badges -->
+<div class="flex items-center gap-space-sm overflow-x-auto py-1 no-scrollbar">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-action text-label-action whitespace-nowrap shadow-sm">
+      Almacén (142)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-action text-label-action whitespace-nowrap active:bg-surface-container-highest transition-colors">
+      Bebidas (88)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-action text-label-action whitespace-nowrap active:bg-surface-container-highest transition-colors">
+      Lácteos (34)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-action text-label-action whitespace-nowrap active:bg-surface-container-highest transition-colors">
+      Limpieza (56)
+    </button>
+</div>
+<!-- Selected Product Card -->
+<div class="relative bg-surface-container rounded-xl p-space-lg shadow-md flex flex-col gap-space-md overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex gap-space-md items-start">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container-highest flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Modern close-up product photograph of Natura pure sunflower oil 1.5 liter plastic bottle, clean warm supermarket background lighting, sharp detail, vibrant golden liquid with dark corporate tech atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATTTQXLRe0aYjlgq9oYiza42FDYHHmSfNAss7VxXO6URqRt7FqqD1O9ybop-mOYGB_D2RPtwOtrCSP2JkSsBMoMV5FBqKrbceXEhSHZWYtaV8Ukfm2OscHKmOEfPKpU7pDQpxYy2yr1weSduap59V1Hgxe2vLDcsUUGw3_9gD01i8VkDpvA96ZssRbgiSVIXNqrmst5E34E94IRGGnJGlqYG0U3KowrHqAcn3p1tKDqQbfNxcFT9tn"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-kpi-badge text-label-kpi-badge text-secondary">
+            Almacén
+          </span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant truncate">
+            7790272001053
+          </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate mt-1">
+          Aceite de Girasol 1.5L
+        </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Marca: Natura Argentina</span>
+</div>
+</div>
+<!-- Stock telemetry sub-grid -->
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stock Actual</span>
+<div class="flex items-baseline gap-1">
+<span class="font-display-kpi-mobile text-display-kpi-mobile text-secondary leading-none">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">un.</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stock Mínimo</span>
+<div class="flex items-baseline gap-1">
+<span class="font-display-kpi-mobile text-display-kpi-mobile text-on-surface leading-none">10</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">un.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Calculator (FerrariPOS PC Logic) -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-md flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">calculate</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cálculo de Margen y PVP</h3>
+</div>
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">
+        MOTOR FERRARI v4.2
+      </span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Step 1: Costo Sin IVA -->
+<div class="flex flex-col gap-1">
+<label class="font-label-action text-label-action text-on-surface flex justify-between" for="inputCost">
+<span>Paso 1: Costo Base (Sin IVA)</span>
+<span class="text-on-surface-variant font-label-kpi-badge text-label-kpi-badge">ARS</span>
+</label>
+<div class="relative flex items-center bg-surface-container-high rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/40">
+<span class="pl-4 font-label-numeric text-label-numeric text-on-surface-variant">$</span>
+<input class="w-full bg-transparent px-2 py-3.5 font-label-numeric text-label-numeric text-on-surface focus:outline-none" id="inputCost" step="10" type="number" value="1200"/>
+<span class="pr-4 font-body-sm text-body-sm text-on-surface-variant">NETO</span>
+</div>
+</div>
+<!-- Step 2: IVA Breakdown -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-action text-label-action text-on-surface flex items-center gap-1">
+<span>Paso 2: + IVA 21%</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Costo computado c/IVA</span>
+</div>
+<div class="text-right">
+<div class="font-label-numeric text-label-numeric text-secondary" id="ivaAmountDisplay">+ $ 252,00</div>
+<div class="font-label-numeric text-label-numeric text-on-surface-variant font-semibold" id="costWithIvaDisplay">$ 1.452,00</div>
+</div>
+</div>
+<!-- Step 3: Profit Margin -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-action text-label-action text-on-surface" for="inputMargin">
+            Paso 3: Margen de Ganancia (%)
+          </label>
+<span class="font-label-numeric text-label-numeric text-tertiary" id="profitAmountDisplay">Ganancia: $ 508,20</span>
+</div>
+<div class="grid grid-cols-5 gap-space-sm items-center">
+<div class="col-span-3 relative flex items-center bg-surface-container-high rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/40">
+<input class="w-full bg-transparent pl-4 pr-1 py-3.5 font-label-numeric text-label-numeric text-on-surface focus:outline-none text-right" id="inputMargin" type="number" value="35"/>
+<span class="pr-4 pl-1 font-label-numeric text-label-numeric text-on-surface-variant">%</span>
+</div>
+<button class="col-span-1 h-12 rounded-xl bg-surface-container-high text-on-surface font-label-numeric text-label-numeric hover:bg-surface-container-highest active:scale-95 transition" onclick="setQuickMargin(30)" type="button">30%</button>
+<button class="col-span-1 h-12 rounded-xl bg-surface-container-high text-on-surface font-label-numeric text-label-numeric hover:bg-surface-container-highest active:scale-95 transition" onclick="setQuickMargin(40)" type="button">40%</button>
+</div>
+</div>
+<!-- Step 4: Rounding Rules -->
+<div class="flex flex-col gap-1">
+<label class="font-label-action text-label-action text-on-surface flex justify-between" for="selectRounding">
+<span>Paso 4: Regla de Redondeo FPOS</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">tune</span>
+</label>
+<div class="relative bg-surface-container-high rounded-xl overflow-hidden">
+<select class="w-full bg-transparent px-4 py-3.5 font-body-md text-body-md text-on-surface focus:outline-none appearance-none" id="selectRounding">
+<option class="bg-surface-container text-on-surface" value="1">Sin Redondeo (Exacto con centavos)</option>
+<option class="bg-surface-container text-on-surface" selected="" value="10">Redondear a decena más cercana ($10)</option>
+<option class="bg-surface-container text-on-surface" value="50">Redondear a múltiplos de cincuenta ($50)</option>
+<option class="bg-surface-container text-on-surface" value="100">Redondear al billete de cien ($100)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3.5 text-on-surface-variant pointer-events-none text-[20px]">
+            arrow_drop_down
+          </span>
+</div>
+</div>
+<!-- Giant Final Sale Price -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col items-center justify-center text-center shadow-inner relative overflow-hidden mt-1">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
+<span class="font-label-kpi-badge text-label-kpi-badge tracking-widest text-primary font-bold uppercase mb-1">
+          PRECIO FINAL DE VENTA (PVP)
+        </span>
+<div class="flex items-baseline justify-center gap-1.5 z-10">
+<span class="font-headline-lg text-headline-lg text-primary">$</span>
+<span class="font-display-kpi-mobile text-display-kpi-mobile text-on-surface font-extrabold tracking-tight" id="finalSalePrice">
+            1.960,00
+          </span>
+</div>
+<span class="text-on-surface-variant font-label-numeric text-label-numeric z-10 mt-1" id="rawUnroundedPrice">
+          Sugerido sin regla: $ 1.960,20
+        </span>
+</div>
+</div>
+</div>
+<!-- Operational Configuration Toggles -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<h4 class="font-label-action text-label-action text-on-surface-variant px-space-xs">Comportamiento en Línea de Caja</h4>
+<!-- Toggle 1: Venta a granel -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">scale</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Venta a granel / balanza</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pide peso al momento del escaneo</span>
+</div>
+</div>
+<button aria-checked="false" class="w-12 h-6 rounded-full bg-surface-container-highest transition-colors relative flex items-center px-1" id="toggleGranel" role="switch" type="button">
+<div class="w-4 h-4 rounded-full bg-on-surface-variant transition-transform transform translate-x-0"></div>
+</button>
+</div>
+<!-- Toggle 2: Descuenta Stock -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Descuenta stock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resta unidades al confirmar ticket</span>
+</div>
+</div>
+<button aria-checked="true" class="w-12 h-6 rounded-full bg-secondary-container transition-colors relative flex items-center px-1" id="toggleStock" role="switch" type="button">
+<div class="w-4 h-4 rounded-full bg-on-secondary-container transition-transform transform translate-x-6"></div>
+</button>
+</div>
+</div>
+<!-- Audit Toast / Info Note -->
+<div class="flex items-center gap-space-sm bg-surface-container-high p-space-md rounded-xl text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-tertiary shrink-0">history</span>
+<span class="font-body-sm text-body-sm leading-tight">
+      Última sincronización verificada hace 2 min por <strong>Administrador</strong> desde Terminal 01 (Caja Principal).
+    </span>
+</div>
+<!-- Primary Commitment Action -->
+<div class="sticky bottom-2 w-full pt-2">
+<button class="w-full py-4 px-6 rounded-xl bg-primary-container text-on-primary-container font-label-action text-label-action font-bold uppercase tracking-wider flex items-center justify-center gap-space-sm shadow-xl active:scale-[0.98] transition-all" id="saveButton" type="button">
+<span class="material-symbols-outlined text-[22px]">cloud_sync</span>
+<span>GUARDAR CAMBIOS EN FERRARIPOS PC</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    const costInput = document.getElementById('inputCost');
+    const marginInput = document.getElementById('inputMargin');
+    const roundingSelect = document.getElementById('selectRounding');
+    const ivaDisplay = document.getElementById('ivaAmountDisplay');
+    const costWithIvaDisplay = document.getElementById('costWithIvaDisplay');
+    const profitDisplay = document.getElementById('profitAmountDisplay');
+    const finalPriceDisplay = document.getElementById('finalSalePrice');
+    const rawUnroundedDisplay = document.getElementById('rawUnroundedPrice');
+    const saveButton = document.getElementById('saveButton');
+    const toggleGranel = document.getElementById('toggleGranel');
+    const toggleStock = document.getElementById('toggleStock');
+
+    const formatARS = (num) => {
+      return num.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    function recalculate() {
+      const baseCost = parseFloat(costInput.value) || 0;
+      const margin = parseFloat(marginInput.value) || 0;
+      const rounding = parseInt(roundingSelect.value, 10) || 1;
+
+      // FerrariPOS Engine Rule: 21% IVA over base cost
+      const ivaVal = baseCost * 0.21;
+      const costWithIva = baseCost + ivaVal;
+
+      // Profit calculated over cost with IVA
+      const profitVal = costWithIva * (margin / 100);
+      const rawFinal = costWithIva + profitVal;
+
+      // Rounding logic
+      let roundedFinal = rawFinal;
+      if (rounding > 1) {
+        roundedFinal = Math.round(rawFinal / rounding) * rounding;
+      }
+
+      ivaDisplay.textContent = '+ $ ' + formatARS(ivaVal);
+      costWithIvaDisplay.textContent = '$ ' + formatARS(costWithIva);
+      profitDisplay.textContent = 'Ganancia: $ ' + formatARS(profitVal);
+      finalPriceDisplay.textContent = formatARS(roundedFinal);
+      rawUnroundedDisplay.textContent = 'Sugerido sin regla: $ ' + formatARS(rawFinal);
+    }
+
+    window.setQuickMargin = function(pct) {
+      marginInput.value = pct;
+      recalculate();
+    };
+
+    costInput.addEventListener('input', recalculate);
+    marginInput.addEventListener('input', recalculate);
+    roundingSelect.addEventListener('change', recalculate);
+
+    // Micro-interactions for switches
+    let granelActive = false;
+    toggleGranel.addEventListener('click', () => {
+      granelActive = !granelActive;
+      toggleGranel.setAttribute('aria-checked', granelActive);
+      toggleGranel.className = granelActive 
+        ? 'w-12 h-6 rounded-full bg-secondary-container transition-colors relative flex items-center px-1' 
+        : 'w-12 h-6 rounded-full bg-surface-container-highest transition-colors relative flex items-center px-1';
+      toggleGranel.firstElementChild.className = granelActive 
+        ? 'w-4 h-4 rounded-full bg-on-secondary-container transition-transform transform translate-x-6' 
+        : 'w-4 h-4 rounded-full bg-on-surface-variant transition-transform transform translate-x-0';
+    });
+
+    let stockActive = true;
+    toggleStock.addEventListener('click', () => {
+      stockActive = !stockActive;
+      toggleStock.setAttribute('aria-checked', stockActive);
+      toggleStock.className = stockActive 
+        ? 'w-12 h-6 rounded-full bg-secondary-container transition-colors relative flex items-center px-1' 
+        : 'w-12 h-6 rounded-full bg-surface-container-highest transition-colors relative flex items-center px-1';
+      toggleStock.firstElementChild.className = stockActive 
+        ? 'w-4 h-4 rounded-full bg-on-secondary-container transition-transform transform translate-x-6' 
+        : 'w-4 h-4 rounded-full bg-on-surface-variant transition-transform transform translate-x-0';
+    });
+
+    // Save with visual concurrency feedback
+    saveButton.addEventListener('click', () => {
+      const originalText = saveButton.innerHTML;
+      saveButton.disabled = true;
+      saveButton.innerHTML = `
+        <span class="material-symbols-outlined text-[22px] animate-spin">refresh</span>
+        <span>ACTUALIZANDO CAJA CENTRAL...</span>
+      `;
+      setTimeout(() => {
+        saveButton.innerHTML = `
+          <span class="material-symbols-outlined text-[22px]">check_circle</span>
+          <span>SINCRONIZADO OK (ETag #REV-9429)</span>
+        `;
+        saveButton.classList.remove('bg-primary-container', 'text-on-primary-container');
+        saveButton.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        setTimeout(() => {
+          saveButton.disabled = false;
+          saveButton.className = 'w-full py-4 px-6 rounded-xl bg-primary-container text-on-primary-container font-label-action text-label-action font-bold uppercase tracking-wider flex items-center justify-center gap-space-sm shadow-xl active:scale-[0.98] transition-all';
+          saveButton.innerHTML = originalText;
+        }, 2200);
+      }, 1000);
+    });
+
+    // Quick camera trigger animation
+    const scanBtn = document.getElementById('cameraScanBtn');
+    scanBtn.addEventListener('click', () => {
+      scanBtn.classList.add('scale-90');
+      setTimeout(() => scanBtn.classList.remove('scale-90'), 150);
+    });
+  })();
+</script></main></body></html>

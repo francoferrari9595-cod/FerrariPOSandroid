@@ -1,0 +1,19 @@
+FERRARI POS MANAGER - PUBLICACION GITHUB
+
+1. Descomprimir el proyecto.
+2. Ejecutar PUBLICAR_FERRARI_POS_MANAGER_GITHUB.bat.
+3. El BAT solo solicita el link del repositorio GitHub.
+4. Se publica automaticamente en la rama main.
+5. GitHub compila Android y Windows en el mismo workflow.
+6. Al terminar, el workflow crea el artefacto:
+   FerrariPOS-Manager-Android y FerrariPOS-Manager-Windows-COMPLETO
+   que contiene Android (APK) y Windows.
+
+IMPORTANTE:
+- Android usa el Android SDK ya instalado en ubuntu-latest.
+- Se elimina android-actions/setup-android porque el error mostrado era el paquete obsoleto "tools".
+- gradlew se normaliza a LF y recibe chmod +x antes de ejecutarse.
+- El nombre visible de Android es FERRARI POS MANAGER.
+
+
+V16.9: corrección Windows para eliminación persistente de tickets móviles vacíos.

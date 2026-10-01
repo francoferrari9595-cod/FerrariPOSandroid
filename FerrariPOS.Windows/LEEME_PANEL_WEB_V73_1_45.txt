@@ -1,0 +1,16 @@
+FerrariPOS V73.1.45 - CORRECCIÓN DEL PANEL WEB
+
+Cambios principales:
+- Corregido el bloqueo en "Cargando información..." del panel web.
+- Eliminado código C# que había quedado incrustado dentro del JavaScript del panel.
+- Las consultas web ahora se ejecutan de forma tolerante: si un módulo falla, los demás siguen cargando.
+- Se añadió tiempo máximo de 8 segundos por consulta para evitar pantallas congeladas.
+- Se añadió diagnóstico visual de errores parciales y botón Reintentar.
+- Las consultas SQLite web usan modo solo lectura + busy_timeout para convivir mejor con ventas y movimientos de caja en curso.
+- Se hicieron lecturas de campos nulos más seguras para evitar que una fila incompleta rompa todo el panel.
+- Se mejoró el aspecto general: tarjetas con acentos de color, cyan/violeta/verde/naranja, indicadores de conexión, animaciones suaves, mejor responsive y tablas.
+- Se mantiene el Quick Tunnel de Cloudflare automático y el enlace público trycloudflare.com.
+- Versión del proyecto e instalador actualizada a 73.1.45.
+
+IMPORTANTE:
+El entorno de esta entrega no dispone del SDK .NET ni de Windows, por lo que no fue posible ejecutar una compilación real del ejecutable aquí. Sí se validó la sintaxis del JavaScript generado y se verificó que el código C# corrupto ya no forma parte del HTML.

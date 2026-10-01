@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#005236", "on-primary-fixed-variant": "#93000b", "background": "#0b1326", "on-tertiary-fixed": "#001e2f", "primary-container": "#dc2626", "inverse-primary": "#bf0715", "on-primary-container": "#fff6f5", "surface-container": "#171f33", "on-primary-fixed": "#410002", "primary-fixed": "#ffdad6", "primary": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "on-tertiary": "#00344e", "surface-container-high": "#222a3d", "on-primary": "#690005", "secondary-fixed": "#6ffbbe", "secondary-container": "#00a572", "on-secondary-container": "#00311f", "on-secondary-fixed": "#002113", "surface-tint": "#ffb4ab", "tertiary-container": "#0079af", "surface-dim": "#0b1326", "on-surface": "#dae2fd", "on-error": "#690005", "inverse-on-surface": "#283044", "on-surface-variant": "#e6bdb8", "surface-container-highest": "#2d3449", "primary-fixed-dim": "#ffb4ab", "on-secondary": "#003824", "on-tertiary-container": "#f4f9ff", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#004b6f", "tertiary": "#8bceff", "outline-variant": "#5c403c", "outline": "#ac8884", "surface": "#0b1326", "error": "#ffb4ab", "surface-variant": "#2d3449", "tertiary-fixed": "#c9e6ff", "tertiary-fixed-dim": "#8bceff", "surface-container-lowest": "#060e20", "inverse-surface": "#dae2fd", "on-background": "#dae2fd", "surface-container-low": "#131b2e", "error-container": "#93000a", "secondary": "#4edea3", "surface-bright": "#31394d" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "label-action": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-kpi-mobile": ["Inter"], "label-kpi-badge": ["JetBrains Mono"], "display-kpi": ["Inter"], "headline-md": ["Inter"], "label-numeric": ["JetBrains Mono"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-action": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-kpi-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-kpi-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-kpi": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-numeric": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col select-none"><header class="fixed top-0 inset-x-0 z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-20 px-margin flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Ferrari<span class="text-primary-container">POS</span></span><span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-kpi-badge text-label-kpi-badge uppercase tracking-wider font-bold">MANAGER</span></div><div class="flex items-center gap-space-xs"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-action text-label-action"><span class="font-label-kpi-badge text-label-kpi-badge text-secondary font-semibold">Admin</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div><button aria-label="Sincronizar con PC" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface active:bg-surface-container-highest transition-colors" title="Sincronización Manual"><span class="material-symbols-outlined text-[20px] text-tertiary">sync</span></button></div></div><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant font-medium truncate max-w-[210px]">En línea: PC Principal (192.168.0.102)</span></div><span class="font-label-kpi-badge text-label-kpi-badge text-secondary font-semibold">LAN 5GHz</span></div></div></header><main class="flex flex-col relative w-full pt-20 pb-28 px-margin bg-surface flex-1"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Segmented Tab Control -->
+<div class="flex p-1 rounded-xl bg-surface-container-low shadow-sm gap-1">
+<button class="flex-1 py-2.5 px-space-xs rounded-lg bg-surface-container-highest text-on-surface font-label-action text-label-action text-center transition-all flex items-center justify-center gap-1.5 shadow-sm" id="tab-cuentas" onclick="switchTab('cuentas')">
+<span class="material-symbols-outlined text-[18px] text-primary">account_balance_wallet</span>
+<span class="truncate">Cuentas</span>
+</button>
+<button class="flex-1 py-2.5 px-space-xs rounded-lg text-on-surface-variant hover:text-on-surface font-label-action text-label-action text-center transition-all flex items-center justify-center gap-1.5" id="tab-arqueo" onclick="switchTab('arqueo')">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="truncate">Arqueo</span>
+</button>
+<button class="flex-1 py-2.5 px-space-xs rounded-lg text-on-surface-variant hover:text-on-surface font-label-action text-label-action text-center transition-all flex items-center justify-center gap-1.5" id="tab-auditoria" onclick="switchTab('auditoria')">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="truncate">Auditoría</span>
+</button>
+</div>
+<!-- SECCIÓN 1: CUENTAS CORRIENTES Y SALDOS -->
+<div class="flex flex-col gap-space-lg" id="view-cuentas">
+<!-- Hero Metric Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-lg shadow-md flex flex-col gap-space-sm">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">credit_score</span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase tracking-wider">Crédito en Circulación</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-kpi-badge text-label-kpi-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 18 Clientes
+        </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-numeric text-label-numeric text-on-surface-variant">Pendiente Total de Cobro</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-kpi-mobile text-display-kpi-mobile text-primary tracking-tight font-bold">$ 428.500,00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<span class="font-body-sm text-body-sm">Plazo promedio de cobro</span>
+<span class="font-label-numeric text-label-numeric text-secondary font-semibold">6.2 días</span>
+</div>
+</div>
+<!-- Buscador Rápido de Clientes -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-10 pr-12 rounded-xl bg-surface-container text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-colors shadow-inner" id="clientSearchInput" placeholder="Buscar cliente por nombre o CUIT..." type="text"/>
+<button aria-label="Filtros avanzados" class="absolute right-1.5 w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+</button>
+</div>
+</div>
+<!-- Lista de Clientes con Estado -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase tracking-wider">Detalle de Saldos por Cuenta</span>
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant">3 de 18</span>
+</div>
+<!-- Cliente 1: Almacén Don Pepe -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-on-surface font-headline-sm text-headline-sm font-bold">
+              DP
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Almacén Don Pepe</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Últ. pago: hace 4 días ($ 20.000,00)</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase">Deuda Actual</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold font-label-numeric">$ 85.400,00</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary-container font-label-action text-label-action flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-transform font-bold" onclick="registrarCobroModal('Almacén Don Pepe', 85400)">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Cobrar / Recibo</span>
+</button>
+<button class="h-11 px-4 rounded-lg bg-surface-container-high text-on-surface font-label-action text-label-action flex items-center justify-center gap-1 hover:bg-surface-container-highest active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-tertiary">folder_open</span>
+<span>Ficha</span>
+</button>
+</div>
+</div>
+<!-- Cliente 2: Restaurante El Fortín (Límite Superado) -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Restaurante El Fortín</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-kpi-badge text-label-kpi-badge font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                  Límite Superado
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-kpi-badge text-label-kpi-badge text-error uppercase">Vencido</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold font-label-numeric">$ 142.000,00</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-space-xs px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant">
+<span>Tope autorizado: $ 100.000</span>
+<span class="text-primary font-semibold font-label-numeric">Exceso: +$ 42.000</span>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary-container font-label-action text-label-action flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-transform font-bold" onclick="registrarCobroModal('Restaurante El Fortín', 142000)">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Cobro Urgente</span>
+</button>
+<button class="h-11 px-4 rounded-lg bg-surface-container-high text-on-surface font-label-action text-label-action flex items-center justify-center gap-1 hover:bg-surface-container-highest active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-tertiary">folder_open</span>
+<span>Ficha</span>
+</button>
+</div>
+</div>
+<!-- Cliente 3: María Laura Rossi (Saldo a Favor) -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 font-headline-sm text-headline-sm font-bold">
+              MR
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">María Laura Rossi</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-kpi-badge text-label-kpi-badge font-bold uppercase tracking-wide">
+                  Saldo a favor
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-kpi-badge text-label-kpi-badge text-secondary font-semibold uppercase">A favor</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold font-label-numeric">$ 3.500,00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm text-body-sm text-on-surface-variant">
+<span>Anticipo en efectivo del 18/10</span>
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-action text-label-action flex items-center gap-1 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px] text-tertiary">folder_open</span>
+<span>Ver Ficha</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 2: ARQUEO DE CAJA DEL TURNO (Desplegable / Modular) -->
+<div class="flex flex-col gap-space-md" id="view-arqueo">
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Encabezado de caja -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Arqueo de Caja Activo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Turno Tarde • Cajero: Juan M.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-kpi-badge text-label-kpi-badge font-semibold">
+          Abierta
+        </span>
+</div>
+<!-- Desglose de Caja en Bloques Tactiles -->
+<div class="flex flex-col gap-2">
+<!-- Apertura -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">login</span>
+<span class="font-body-md text-body-md text-on-surface">Monto inicial de apertura</span>
+</div>
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface">$ 20.000,00</span>
+</div>
+<!-- Ingresos Efectivo -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">trending_up</span>
+<span class="font-body-md text-body-md text-on-surface">Ingresos efectivo hoy</span>
+</div>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">+ $ 642.300,00</span>
+</div>
+<!-- Retiros / Gastos -->
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">trending_down</span>
+<span class="font-body-md text-body-md text-on-surface">Retiros / Gastos registrados</span>
+</div>
+<span class="font-label-numeric text-label-numeric font-bold text-primary">- $ 15.000,00</span>
+</div>
+<div class="flex items-center justify-between pl-6 text-on-surface-variant">
+<span class="font-body-sm text-body-sm">Motivo: Pago Proveedor Pan</span>
+<span class="font-label-kpi-badge text-label-kpi-badge">Vale #084</span>
+</div>
+</div>
+</div>
+<!-- Total Esperado Destacado -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-high shadow-inner mt-1">
+<div class="flex flex-col">
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase tracking-wider">Efectivo Esperado en Cajón</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Balance teórico calculado</span>
+</div>
+<div class="text-right">
+<span class="font-display-kpi-mobile text-display-kpi-mobile text-secondary font-bold font-label-numeric">$ 647.300,00</span>
+</div>
+</div>
+<!-- Botones de Acción de Caja -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full h-12 rounded-xl bg-surface-container-highest text-on-surface font-label-action text-label-action flex items-center justify-center gap-2 hover:bg-surface-bright active:scale-98 transition-all" onclick="toggleMovimientosDetalle()">
+<span class="material-symbols-outlined text-[20px] text-tertiary">query_stats</span>
+<span>Ver detalle de movimientos en tiempo real</span>
+</button>
+<div class="flex gap-2">
+<button class="flex-1 h-11 rounded-lg bg-surface-container-low text-on-surface font-label-action text-label-action flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Retiro / Vale</span>
+</button>
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary-container font-label-action text-label-action flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-transform font-bold">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Cierre Turno</span>
+</button>
+</div>
+</div>
+<!-- Drawer de Detalle Desplegable (Oculto por defecto o interactivo) -->
+<div class="hidden flex flex-col gap-2 pt-space-sm border-t border-surface-container-highest" id="detalle-movimientos">
+<span class="font-label-kpi-badge text-label-kpi-badge text-on-surface-variant uppercase">Últimos Flujos del Cajón</span>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-1.5 rounded bg-surface-container-low">
+<span class="text-on-surface">Venta Ticket #0192 (Efectivo)</span>
+<span class="text-secondary font-label-numeric font-semibold">+$ 8.400,00</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-1.5 rounded bg-surface-container-low">
+<span class="text-on-surface">Cobro Don Pepe Cta. Cte.</span>
+<span class="text-secondary font-label-numeric font-semibold">+$ 20.000,00</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-1.5 rounded bg-surface-container-low">
+<span class="text-on-surface">Gasto Insumos Limpieza</span>
+<span class="text-primary font-label-numeric font-semibold">-$ 2.100,00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 3: REGISTRO DE AUDITORÍA MÓVIL RECIENTE -->
+<div class="flex flex-col gap-space-sm" id="view-auditoria">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">history_toggle_off</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Auditoría Móvil Local</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-kpi-badge text-label-kpi-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Encriptado
+      </span>
+</div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Item Auditoría 1: Cambio de Precio -->
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Modificación de Precio</span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant flex-shrink-0">14:23 hs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Admin modificó precio de <span class="text-on-surface font-medium">Galletitas Oreo 118g</span>
+</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-label-numeric text-label-numeric line-through text-on-surface-variant">$ 950</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">arrow_forward</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-numeric text-label-numeric font-bold text-secondary">$ 1.100</span>
+</div>
+</div>
+</div>
+<!-- Item Auditoría 2: Cobro Registrado -->
+<div class="flex items-start gap-space-sm pt-space-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[18px]">price_check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Cobro en Cuenta Corriente</span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant flex-shrink-0">12:10 hs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Admin registró cobro de <span class="text-secondary font-semibold font-label-numeric">$ 20.000,00</span> a <span class="text-on-surface font-medium">Almacén Don Pepe</span>
+</p>
+<div class="flex items-center gap-2 mt-1 text-label-kpi-badge text-label-kpi-badge text-on-surface-variant">
+<span>Terminal #01 (Móvil)</span>
+<span>•</span>
+<span>Recibo N° 0004-00129</span>
+</div>
+</div>
+</div>
+<!-- Garantía de Inmutabilidad -->
+<div class="flex items-center gap-space-xs p-space-xs px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant text-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync_saved_locally</span>
+<span>Asentado y replicado en base de datos PC Principal.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal interactivo para Registrar Cobro Rápido -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4" id="modal-cobro">
+<div class="w-full max-w-lg bg-surface-container-high rounded-t-2xl sm:rounded-2xl p-space-lg flex flex-col gap-space-md shadow-2xl animate-in slide-in-from-bottom duration-200">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Emitir Recibo de Cobro</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="cerrarCobroModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cliente seleccionado</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modal-cliente-nombre">--</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Monto a abonar ($)</span>
+<input class="w-full h-14 px-4 rounded-xl bg-surface-container text-on-surface font-display-kpi-mobile text-display-kpi-mobile font-bold focus:outline-none focus:ring-2 focus:ring-primary" id="modal-monto-input" placeholder="0.00" type="number"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-action text-label-action flex items-center justify-center gap-1.5 focus:bg-surface-bright">
+<span class="material-symbols-outlined text-[18px] text-secondary">payments</span>
+<span>Efectivo</span>
+</button>
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-action text-label-action flex items-center justify-center gap-1.5 focus:bg-surface-bright">
+<span class="material-symbols-outlined text-[18px] text-tertiary">qr_code_2</span>
+<span>Transferencia</span>
+</button>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<button class="flex-1 h-12 rounded-xl bg-surface-container text-on-surface font-label-action text-label-action hover:bg-surface-container-highest" onclick="cerrarCobroModal()">
+        Cancelar
+      </button>
+<button class="flex-1 h-12 rounded-xl bg-primary-container text-on-primary-container font-label-action text-label-action font-bold shadow-md active:scale-95 transition-transform flex items-center justify-center gap-1" onclick="confirmarCobro()">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Confirmar Cobro</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchTab(tabId) {
+    const tabs = ['cuentas', 'arqueo', 'auditoria'];
+    tabs.forEach(t => {
+      const btn = document.getElementById('tab-' + t);
+      const view = document.getElementById('view-' + t);
+      
+      if (t === tabId) {
+        btn.classList.add('bg-surface-container-highest', 'text-on-surface');
+        btn.classList.remove('text-on-surface-variant');
+        view.classList.remove('hidden');
+      } else {
+        btn.classList.remove('bg-surface-container-highest', 'text-on-surface');
+        btn.classList.add('text-on-surface-variant');
+        view.classList.add('hidden');
+      }
+    });
+  }
+
+  function toggleMovimientosDetalle() {
+    const d = document.getElementById('detalle-movimientos');
+    if (d.classList.contains('hidden')) {
+      d.classList.remove('hidden');
+    } else {
+      d.classList.add('hidden');
+    }
+  }
+
+  function registrarCobroModal(cliente, montoSugerido) {
+    document.getElementById('modal-cliente-nombre').innerText = cliente;
+    document.getElementById('modal-monto-input').value = montoSugerido;
+    const modal = document.getElementById('modal-cobro');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function cerrarCobroModal() {
+    const modal = document.getElementById('modal-cobro');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function confirmarCobro() {
+    const cliente = document.getElementById('modal-cliente-nombre').innerText;
+    const monto = document.getElementById('modal-monto-input').value;
+    cerrarCobroModal();
+    // Feedback táctil instantáneo
+    alert('¡Cobro de $' + monto + ' a ' + cliente + ' asentado e impreso correctamente!');
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-primary-container"><div class="h-20 px-space-sm flex items-center justify-around relative"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[56px] text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="panel" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-kpi-badge text-label-kpi-badge">Panel</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[56px] text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="productos" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-kpi-badge text-label-kpi-badge">Productos</span></a><div class="flex flex-col items-center justify-center -mt-5 min-w-[64px]"><a aria-label="Escanear código de barras" class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_16px_rgba(220,38,38,0.4)] active:scale-95 transition-transform" data-path="escaner" href="#"><span class="material-symbols-outlined text-[28px]">barcode_scanner</span></a><span class="font-label-kpi-badge text-label-kpi-badge text-on-surface font-semibold mt-1">Escanear</span></div><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[56px] transition-colors gap-0.5 text-primary-container" data-path="caja-ventas" href="#"><span class="material-symbols-outlined text-[24px]">point_of_sale</span><span class="font-label-kpi-badge text-label-kpi-badge">Caja</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[56px] text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="mas-gestion" href="#"><span class="material-symbols-outlined text-[24px]">menu</span><span class="font-label-kpi-badge text-label-kpi-badge">Más</span></a></div></nav></body></html>

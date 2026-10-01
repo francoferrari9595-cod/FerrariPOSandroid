@@ -1,0 +1,24 @@
+FerrarisPOS V73.1.48 – NAVEGACIÓN EN BUCLE DE MEDIOS DE PAGO
+
+CAMBIO DE ESTA VERSIÓN
+
+1. FLECHAS EN LA VENTANA DE COBRO
+   Las teclas Flecha Izquierda y Flecha Derecha ahora permiten recorrer TODOS los medios de pago disponibles.
+
+   Orden:
+   EFECTIVO → MERCADO PAGO* → MIXTO → TRANSFERENCIA → CRÉDITO → DÓLARES → EFECTIVO
+
+   * Mercado Pago aparece en el recorrido solamente cuando la caja paralela de Mercado Pago está habilitada.
+
+2. NAVEGACIÓN EN BUCLE
+   Al llegar al último medio y seguir presionando Flecha Derecha, vuelve al primero.
+   Al estar en el primero y presionar Flecha Izquierda, vuelve al último.
+
+3. CRÉDITO Y DÓLARES
+   Crédito y Dólares ya no quedan fuera de la navegación por teclado. Se pueden seleccionar con las flechas igual que el resto de los medios disponibles.
+
+4. NO SE MODIFICA EL COBRO
+   F1 sigue cobrando e imprimiendo.
+   F2 sigue cobrando sin imprimir.
+   ENTER sigue permitiendo confirmar el cobro después de abrir F12.
+   ESC sigue cancelando.

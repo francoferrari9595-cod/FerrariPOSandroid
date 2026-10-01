@@ -1,0 +1,13 @@
+V73.1.52 · HISTORIAL COMPLETO Y ANULACIÓN DE INGRESOS/EGRESOS
+
+- La sección Caja ahora tiene un botón VER INGRESOS / EGRESOS.
+- Se eliminó la dependencia de mostrar solo los últimos movimientos en la pantalla principal.
+- Nuevo historial completo del turno, con desplazamiento, búsqueda y filtros.
+- Se pueden consultar ingresos, egresos y movimientos anulados.
+- La anulación ya no borra físicamente el movimiento: queda conservado para auditoría.
+- Para anular es obligatorio escribir una explicación/motivo.
+- Se guarda quién anuló y cuándo.
+- Un movimiento anulado deja de afectar los cálculos de efectivo, Mercado Pago, cierres y reportes.
+- El cierre final y el reporte diario/mail incluyen una sección MOVIMIENTOS ANULADOS con importe, medio, concepto, motivo y usuario que anuló.
+- El Excel de cierre conserva el detalle y estado de cada movimiento.
+- La base existente se migra automáticamente con las nuevas columnas al iniciar FerrarisPOS.

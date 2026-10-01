@@ -1,0 +1,15 @@
+CORRECCION FINAL FERRARIPOS - 2026-09-28
+
+1. Se mantiene la version actual como base. No se recuperaron archivos de versiones antiguas ni se revirtieron correcciones anteriores.
+2. Se corrigio el nombre del proyecto Windows para que sea exactamente:
+   FerrariPOS.Windows/FerrariPOS.csproj
+3. Se actualizaron la solucion, los BAT de compilacion y el workflow de GitHub para usar FerrariPOS.csproj.
+4. Se conserva el AssemblyName FerrarisPOS, por lo que el ejecutable continua siendo FerrarisPOS.exe.
+5. Se conserva el Central Server actual con WebAuth, usuario, StoreId y StoreName.
+6. Se conserva la cuenta del Panel Central en SettingsForm y ahora la contrasena queda visible para poder copiarla/consultarla.
+7. El workflow sigue teniendo SOLO 2 JOBS:
+   - Cliente - Android + Windows + Licencias
+   - FerrariPOS Central Server
+8. Android Manager y License Admin mantienen Gradle 8.11.1.
+9. Se agrega SUBIR_TODO_GITHUB.bat en la raiz. Usa Git directamente y NO requiere GitHub CLI (gh).
+10. El ZIP esta preparado con el contenido del proyecto directamente en la raiz, incluyendo .github, para poder subirlo al repositorio sin mover una carpeta PROYECTO adicional.

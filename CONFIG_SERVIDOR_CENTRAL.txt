@@ -1,0 +1,6 @@
+FerrariPOS - Arquitectura central
+
+URL central de desarrollo: se configurará al publicar en Render.
+URL futura estable: https://panel.ferraripos.com
+
+REGLA: Windows, Android y Web usarán esta API central. No se elimina la conexión LAN/Cloudflare actual hasta que la API completa esté migrada y probada.

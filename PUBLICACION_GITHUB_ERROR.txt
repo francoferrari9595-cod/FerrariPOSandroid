@@ -1,0 +1,2 @@
+FerrariPOS - REGISTRO DE PUBLICACION EN GITHUB
+Este archivo se actualiza automaticamente por SUBIR_A_GITHUB.bat cuando ocurre un error.

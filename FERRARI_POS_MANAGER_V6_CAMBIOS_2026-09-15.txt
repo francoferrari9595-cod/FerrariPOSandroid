@@ -1,0 +1,56 @@
+FERRARI POS MANAGER V6 — REVISIÓN PROFUNDA ANDROID + WINDOWS
+Fecha: 15/09/2026
+
+CAMBIOS PRINCIPALES
+1. COMPRAS ANDROID
+- Selector de proveedor y producto con tarjetas táctiles explícitas.
+- Al elegir producto se carga realmente el producto, costo y cantidad.
+- AGREGAR PRODUCTO A LA ORDEN arma el carrito correctamente.
+- CREAR ORDEN DE COMPRA envía los productos seleccionados a Windows.
+- Se mantiene eliminación por pulsación prolongada de órdenes en borrador.
+
+2. PRODUCTOS ANDROID
+- Corregido el backend: ahora POST /api/mobile/productos realmente crea productos nuevos.
+- Se registra movimiento inicial de stock cuando corresponde.
+- Se exporta el inventario a Excel después del alta.
+- Se registra auditoría de alta/edición desde Manager.
+
+3. MESAS / TICKETS
+- El cobro desde Android ya NO depende de la autorización allow_android_charge de Windows.
+- Android puede cobrar directamente una mesa/ticket abierto siempre que exista una caja abierta.
+- Al cobrar la mesa, la venta se registra en Windows y el ticket abierto se elimina.
+- El canal de las ventas realizadas desde Android queda identificado como ANDROID.
+
+4. CLIENTES
+- Al tocar un cliente se consulta su cuenta corriente real de Windows.
+- Se muestran deudas, abonos, fecha, motivo/concepto, medio de pago, ticket y productos de cada venta a crédito.
+- Botón ENVIAR permite compartir un comprobante de deuda en texto desde Android mediante WhatsApp u otra aplicación compatible.
+- Los abonos siguen impactando en la caja real de Windows.
+- Se registra auditoría MOBILE_CUSTOMER_PAYMENT.
+
+5. CAJA
+- INGRESO / EGRESO ahora tiene selector desplegable de medios de pago.
+- Los medios se consultan desde Windows; no hace falta escribir manualmente el medio.
+- Se mantiene ingreso/egreso separado y selección visual.
+
+6. VENTAS
+- Últimas ventas quedan abajo.
+- Al tocar un ticket se abre el detalle.
+- Desde el detalle se puede iniciar devolución de un artículo.
+- Cada producto cargado tiene controles + / − de cantidad.
+- Al escanear, la cantidad inicial sigue siendo 1.
+- Después de cobrar, el carrito se limpia y queda listo para una nueva venta.
+- Se mantiene vibración corta al cobrar y sonido únicamente del escáner.
+
+7. REPORTE / AUDITORÍA
+- Se registran operaciones realizadas desde FerrariPOS Manager: ventas, abonos, caja, mesas, compras, altas de productos y ventas pendientes.
+- El correo de cierre incorpora un resumen de actividad realizada desde Android durante el turno.
+
+8. DISEÑO
+- Título FERRARI POS MANAGER en naranja fluorescente.
+- Barra superior transparente.
+- Paneles oscuros translúcidos y estética Glass 2026.
+- Se mantiene el diseño moderno y los temas existentes.
+
+IMPORTANTE
+- La compilación completa no pudo ejecutarse dentro de este entorno porque no hay acceso de red a services.gradle.org y tampoco está instalado dotnet en el entorno de trabajo. El paquete queda preparado para GitHub Actions.

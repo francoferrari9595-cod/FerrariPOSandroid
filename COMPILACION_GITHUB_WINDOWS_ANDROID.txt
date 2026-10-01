@@ -1,0 +1,13 @@
+FerrariPOS - COMPILACION COMPLETA
+
+1) Extraer todo el ZIP.
+2) Ejecutar GITHUB.bat o SUBIR_A_GITHUB.bat.
+3) Pegar el link del repositorio GitHub.
+4) La rama se publica automaticamente en MAIN.
+5) GitHub Actions ejecuta las compilaciones y entrega EXACTAMENTE CUATRO ARTEFACTOS INDEPENDIENTES:
+   - FerrariPOS-Manager-Android -> Android Manager APK.
+   - FerrariPOS-Licencias-Android -> Android Licencias APK.
+   - FerrariPOS-Windows-EXE -> Windows.exe standalone.
+   - FerrariPOS-Windows-Setup -> Windows Setup generado con Inno Setup.
+
+El EXE y el Setup de Windows se publican por separado: ya no se agrupan en un ZIP ni se entrega un artefacto Windows combinado.

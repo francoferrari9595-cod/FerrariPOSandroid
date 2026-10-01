@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ferraripos-central
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ferraripos-central-db
+          property: connectionString
+
+databases:
+  - name: ferraripos-central-db
+    plan: free
+    databaseName: ferraripos
+    user: ferraripos

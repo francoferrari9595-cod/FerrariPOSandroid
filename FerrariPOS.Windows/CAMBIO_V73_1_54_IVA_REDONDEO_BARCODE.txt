@@ -1,0 +1,25 @@
+FERRARISPOS V73.1.54 - IVA, REDONDEO PERMANENTE Y BARCODE
+
+1. IVA 21%
+- El botón SUMAR IVA 21% ahora funciona como interruptor.
+- Al activarlo agrega 21% al precio de venta.
+- Al tocarlo nuevamente se desactiva y quita el IVA del precio final.
+- El estado se guarda por producto en products.adds_iva_21.
+- Se mantiene el cálculo de ganancia sobre el precio neto, sin considerar IVA como ganancia.
+
+2. REDONDEO PERMANENTE
+- Nuevo botón: REDONDEO A 0 / 5.
+- Es un interruptor por producto.
+- Al activarlo, el precio de venta se redondea inmediatamente al múltiplo de $5 más cercano.
+- Ejemplos: $397,55 -> $400,00 y $124,22 -> $125,00.
+- Mientras esté activo, cualquier precio calculado por porcentaje, IVA o escrito manualmente se normaliza inmediatamente al múltiplo de $5.
+- El estado se guarda por producto en products.round_sale_to_5.
+- Al desactivarlo se deja de aplicar el redondeo automático; el precio existente no se altera automáticamente.
+
+3. ACTUALIZACIÓN EN TIEMPO REAL
+- El precio de venta sigue recalculándose inmediatamente al modificar costo o porcentaje de ganancia, sin TAB.
+- Si IVA y/o redondeo están activos, se aplican en la misma actualización.
+
+4. BARCODE
+- Se conserva la liberación segura de códigos ocupados por productos inactivos.
+- No se elimina físicamente un producto que tenga historial; se libera el código mediante archivo interno.

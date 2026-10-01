@@ -1,0 +1,18 @@
+FerrariPOS V73.1.46 - Correcciones adicionales
+
+1) MERMAS
+- Los reportes de cierre y el reporte detallado muestran cada merma con:
+  fecha/hora, producto, código de barras, cantidad, motivo, observación y responsable.
+- El resumen por email del cierre también incluye el detalle de las mermas.
+- El Excel ya conservaba el detalle y no fue alterado.
+
+2) BRILLO GLOBAL
+- Configuración F7 incorpora al final una tarjeta "PANTALLA · BRILLO GENERAL DEL PROGRAMA".
+- Rango: 70% a 140%, con 100% como normal.
+- El ajuste modifica superficies/interfaz sin alterar colores de marca ni texto.
+- Se guarda en SQLite como ui_brightness y queda disponible para todos los empleados que usan la misma base de datos.
+- Solo ADMIN puede cambiar el ajuste global.
+
+3) CONECTIVIDAD
+- No se modificaron AUTO_SETUP.bat ni Setup_Network_Cloudflare.ps1.
+- DNS, Cloudflare, QuickTunnel, túnel automático y servidor web quedan intactos.

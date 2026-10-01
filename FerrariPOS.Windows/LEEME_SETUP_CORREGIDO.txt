@@ -1,0 +1,13 @@
+FERRARIPOS V73.1.51 - SETUP CORREGIDO
+
+El error Access is denied de FerrariPOS.exe ocurria porque AUTO_SETUP.bat publicaba directamente en Proyecto\EXE. Si FerrariPOS.exe estaba abierto, Windows bloqueaba ese archivo.
+
+Esta version publica en una carpeta temporal dentro de %TEMP%, y luego Inno Setup toma los archivos desde esa carpeta. No utiliza Proyecto\EXE como destino de publish.
+
+1. Descomprimir el ZIP.
+2. Entrar en Proyecto.
+3. Ejecutar AUTO_SETUP.bat como administrador (tambien puede elevarse solo).
+4. Esperar a que genere FerrariPOS_Setup_V73.1.51.exe.
+5. El programa FerrariPOS puede permanecer abierto durante la compilacion.
+
+Nota: se requiere .NET 8 SDK para compilar y conexion a Internet si hay que descargar Inno Setup.

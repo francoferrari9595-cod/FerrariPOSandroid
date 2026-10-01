@@ -1,0 +1,7 @@
+FerrariPOS V73.1.56
+- API móvil integrada con token.
+- QR de vinculación desde Configuración.
+- FerrariPOS Manager puede consultar productos, inventario, clientes, ventas y caja.
+- FerrariPOS Manager puede actualizar precio de venta de un producto.
+- El panel web histórico se mantiene separado de la API móvil.
+- Se conserva la lógica previa de IVA sobre COSTO, redondeo 0/5 y protección de códigos de barras.

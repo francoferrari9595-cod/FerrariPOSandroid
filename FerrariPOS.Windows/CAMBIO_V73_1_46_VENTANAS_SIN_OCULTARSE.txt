@@ -1,0 +1,17 @@
+FerrariPOS V73.1.46 - Correccion de ventanas secundarias
+
+CORRECCION:
+Todas las ventanas auxiliares que se abren desde MainForm mediante dialogo quedan vinculadas a la pantalla principal como ventanas propietarias y se mantienen delante mientras estan abiertas.
+
+Esto corrige el caso en que una ventana secundaria (F7 Configuracion, F3 Productos, F4 Inventario, F5 Caja, F6 Reportes, F8 Usuarios, F9 Proveedores, Panel, Merma, Reservas, Compras, cobro, tickets, mesas y dialogos auxiliares) pueda quedar detras de MainForm y hacer que el programa parezca bloqueado.
+
+IMPLEMENTACION:
+- Se centralizo la apertura de dialogos mediante ShowOwnedDialog.
+- Se usa ShowDialog(this) para conservar la relacion nativa Owner/MainForm.
+- Se desactiva ShowInTaskbar para evitar una segunda tarea innecesaria.
+- Al mostrarse el dialogo se fuerza BringToFront/Activate una sola vez.
+- MainForm detecta cualquier OwnedForm visible y, si vuelve a activarse por un cambio de pantalla/tema, devuelve el dialogo al frente.
+- NO se utiliza TopMost, por lo que FerrariPOS no queda permanentemente por encima de otras aplicaciones de Windows.
+
+NO MODIFICADO:
+Cloudflare, DNS, QuickTunnel, tunel automatico, AUTO_SETUP.bat, Setup_Network_Cloudflare.ps1, servidor/control web, tickets/WhatsApp, F10, inventario, mermas, brillo y arqueo no fueron alterados en esta correccion.

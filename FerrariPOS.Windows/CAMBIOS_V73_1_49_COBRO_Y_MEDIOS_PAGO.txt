@@ -1,0 +1,16 @@
+FerrariPOS V73.1.49 – PAQUETE DE COMPILACIÓN
+
+Incluye los cambios anteriores:
+1) Búsqueda escrita de cliente/deudor en Crédito.
+2) Descuento general desde el total del ticket.
+3) ENTER para cobrar después de abrir F12.
+4) Flechas izquierda/derecha para recorrer en bucle todos los medios de pago disponibles, incluyendo Crédito y Dólares.
+
+IMPORTANTE:
+- Setup_Network_Cloudflare.ps1 NO fue modificado.
+- Setup_FerrariPOS.iss NO fue modificado.
+- Setup_FerrariPOS_ORIGINAL_73_1_45.iss NO fue modificado.
+- WebDashboardServer.cs NO fue modificado.
+- NetworkRecovery.cs NO fue modificado.
+
+La versión de ensamblado del proyecto y el título de COMPILAR_FACIL.bat fueron actualizados a V73.1.49 únicamente para identificar este paquete.
